@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<suite>
+  <test name="Kallisto-Tests">
+    <classes>
+      <class name="yeene.kallisto.math.VectorTest" />
+    </classes>
+  </test>
+</suite>
