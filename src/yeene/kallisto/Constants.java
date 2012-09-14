@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * definition of constants used in the calculations.
  *
- * @author armin
+ * @author yeene
  */
 public class Constants {
 
@@ -17,12 +17,12 @@ public class Constants {
   /**
    * for viewing.
    */
-  public static final BigDecimal scale = new BigDecimal("1000000000.0");
+  public static final BigDecimal SCALE = new BigDecimal("1000000000.0");
 
   /**
    * definition of the step size in seconds.
    */
-  public static BigDecimal dt = BigDecimal.ONE;
+  public static BigDecimal DT = BigDecimal.ONE;
 
   /**
    * definition of an epsilon to choose for equality checks on numbers.
@@ -32,5 +32,5 @@ public class Constants {
   /**
    * number of decimals after period in calculations
    */
-  public static final int precisision = 4;
+  public static final int PRECISISION = 4;
 }

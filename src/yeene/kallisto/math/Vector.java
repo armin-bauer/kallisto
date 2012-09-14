@@ -7,9 +7,12 @@ import java.math.BigDecimal;
 /**
  * Implementation of a basic math vector class.
  *
- * @author armin
+ * @author yeene
  */
 public final class Vector {
+
+  public static final Vector NULLVECTOR = new Vector(0.0, 0.0, 0.0);
+
 
   private final BigDecimal x;
   private final BigDecimal y;
@@ -53,12 +56,21 @@ public final class Vector {
     return new Vector(x.multiply(d), y.multiply(d), z.multiply(d));
   }
 
-  public Vector div(final Double d) {
-    return mult(1/d);
+  public Vector div(final Double k) {
+    final BigDecimal d = BigDecimal.valueOf(k);
+    return new Vector( x.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
+                       y.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
+                       z.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP));
   }
 
   public Vector div(final BigDecimal d) {
-    return mult(BigDecimal.ONE.divide(d, Constants.precisision, BigDecimal.ROUND_HALF_UP));
+    return new Vector( x.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
+                       y.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
+                       z.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP));
+  }
+
+  public BigDecimal length() {
+    return BigDecimal.valueOf( Math.pow((x.multiply(x).add(y.multiply(y)).add(z.multiply(z))).doubleValue(), 0.5) );
   }
 
   /**

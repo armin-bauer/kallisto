@@ -3,6 +3,7 @@
   <test name="Kallisto-Tests">
     <classes>
       <class name="yeene.kallisto.math.VectorTest" />
+      <class name="yeene.kallisto.SatteliteBodiesStateChangeCollectorTest" />
     </classes>
   </test>
 </suite>

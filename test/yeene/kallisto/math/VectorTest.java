@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import static org.fest.assertions.Assertions.assertThat;
 
 /**
- * @author armin
+ * @author yeene
  */
 public class VectorTest {
 
@@ -124,6 +124,28 @@ public class VectorTest {
       new Object[] { new Vector( 0.0,  0.0,  0.0), 2.0, new Vector( 0.0,  0.0,  0.0) },
       new Object[] { new Vector(10.0, 10.0, 10.0), 2.0, new Vector( 5.0,  5.0,  5.0) },
       new Object[] { new Vector( 8.0,  6.0,  3.0), 2.0, new Vector( 4.0,  3.0, 1.50) }
+    };
+  }
+
+  @Test(dataProvider = "length: Vector_x_DesiredResult")
+  public void length_returnsLengthOfVector(final Vector v, final double expectedLenght) throws Exception {
+    // fixture: by dataProvicer
+
+    // execution: call length on the vector
+    final BigDecimal result = v.length();
+
+    // assertion: should be the same as the expected length
+    assertThat(result).describedAs("calculated lenghth of vector").isEqualTo(BigDecimal.valueOf(expectedLenght));
+  }
+
+  @DataProvider(name = "length: Vector_x_DesiredResult")
+  public Object[][] length_dataProvider() {
+    return new Object[][] {
+      new Object[] { new Vector(0.0, 0.0, 0.0), 0.0 },
+      new Object[] { new Vector(1.0, 0.0, 0.0), 1.0 },
+      new Object[] { new Vector(0.0, 1.0, 0.0), 1.0 },
+      new Object[] { new Vector(0.0, 0.0, 1.0), 1.0 },
+      new Object[] { new Vector(3.0, 4.0, 0.0), 5.0 },
     };
   }
 
