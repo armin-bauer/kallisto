@@ -1,6 +1,8 @@
 package yeene.kallisto;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,6 +13,32 @@ import java.util.List;
 public class SimulatedSystem {
 
   private List<Sattelite> bodies = new ArrayList<Sattelite>();
+  private long numberOfIterationSteps = 0l;
+
+  /**
+   * get a bounding box around the stuff
+   * @return a bounding box around the system
+   */
+  public BoundingBox getBoundingBox() {
+    BigDecimal maxx = new BigDecimal("-99999999999999999999999");
+    BigDecimal maxy = new BigDecimal("-99999999999999999999999");
+    BigDecimal maxz = new BigDecimal("-99999999999999999999999");
+    BigDecimal minx = new BigDecimal("99999999999999999999999");
+    BigDecimal miny = new BigDecimal("99999999999999999999999");
+    BigDecimal minz = new BigDecimal("99999999999999999999999");
+
+    for(final Sattelite s : bodies) {
+      maxx = s.getPosition().getX().compareTo(maxx) > 0 ? s.getPosition().getX() : maxx;
+      maxy = s.getPosition().getY().compareTo(maxy) > 0 ? s.getPosition().getY() : maxy;
+      maxz = s.getPosition().getZ().compareTo(maxz) > 0 ? s.getPosition().getZ() : maxz;
+
+      minx = s.getPosition().getX().compareTo(minx) < 0 ? s.getPosition().getX() : minx;
+      miny = s.getPosition().getY().compareTo(miny) < 0 ? s.getPosition().getY() : miny;
+      minz = s.getPosition().getZ().compareTo(minz) < 0 ? s.getPosition().getZ() : minz;
+    }
+
+    return new BoundingBox(maxx, maxy, maxz, minx, miny, minz);
+  }
 
   /**
    * let the system go to the next state.
@@ -36,6 +64,8 @@ public class SimulatedSystem {
     for(final SatteliteBodiesStateChangeCollector collector : stateChanges) {
       collector.apply();
     }
+
+    numberOfIterationSteps++;
   }
 
   /**
@@ -43,8 +73,20 @@ public class SimulatedSystem {
    * @param planets one or multiple planets
    */
   public void addPlanets(final Sattelite... planets) {
-    for(final Sattelite planet : planets) {
-      bodies.add(planet);
-    }
+    Collections.addAll(bodies, planets);
+  }
+
+  /**
+   * @return the elements in the system.
+   */
+  public List<Sattelite> getElements() {
+    return bodies;
+  }
+
+  /**
+   * @return the number of iteration steps in this simulation.
+   */
+  public long getIterationCount() {
+    return numberOfIterationSteps;
   }
 }

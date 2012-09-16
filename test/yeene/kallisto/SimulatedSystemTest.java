@@ -16,6 +16,7 @@ public class SimulatedSystemTest {
 
   public static final Vector INITIAL_POSITION_PLANET_1 = new Vector(100.0, 0.0, 0.0);
   public static final Vector INITIAL_POSITION_PLANET_2 = new Vector(0.0, 0.0, 0.0);
+  public static final Vector INITIAL_POSITION_PLANET_3 = new Vector(0.0, 100.0, 0.0);
   public static final int MAXIMUM_STEPS_BEFORE_COLLISION_IS_EXPECTED = 100000;
 
   private SimulatedSystem simulatedSystem;
@@ -23,6 +24,20 @@ public class SimulatedSystemTest {
   @BeforeMethod
   public void setUp() throws Exception {
     simulatedSystem = new SimulatedSystem();
+  }
+
+  @Test
+  public void step_increasesIterationCount() throws Exception {
+    // fixture: at first: iteration count is 0
+
+    // execution: call step three times, iteration count must go up each time.
+    assertThat(simulatedSystem.getIterationCount()). describedAs("number of iterations").isEqualTo(0);
+    simulatedSystem.step();
+    assertThat(simulatedSystem.getIterationCount()). describedAs("number of iterations").isEqualTo(1);
+    simulatedSystem.step();
+    assertThat(simulatedSystem.getIterationCount()). describedAs("number of iterations").isEqualTo(2);
+
+    // assertion:
   }
 
   @Test
@@ -44,6 +59,31 @@ public class SimulatedSystemTest {
     assertThat(differenceInDistance.compareTo(BigDecimal.ZERO)).
       describedAs("distance between the planets after one step").
       isEqualTo(1); // >0
+  }
+
+  @Test
+  public void step_hasSymmetricalResult_whenOneCentralBodyIsPulledBetweenTwoOthers() throws Exception {
+    // fixture:
+    final Sattelite s1 = generateFirstPlanet();
+    final Sattelite s2 = generateSecondPlanet();
+    final Sattelite s3 = generateThirdPlanet();
+    simulatedSystem.addPlanets(s1, s2, s3);
+
+    // execution: perform one step
+    simulatedSystem.step();
+
+    // assertion: planet 2 should have same x any y value and both should have gone in the direction of (100.0, 100.0)
+    assertThat(s2.getPosition().getX()).
+      describedAs("x position of second planet").
+      isEqualTo(s2.getPosition().getY());
+
+    assertThat(s1.getPosition().getX()).
+      describedAs("x position of first planet").
+      isEqualTo(s3.getPosition().getY());
+
+    assertThat(s1.getPosition().getY()).
+      describedAs("y position of first planet").
+      isEqualTo(s3.getPosition().getX());
   }
 
   @Test
@@ -86,6 +126,10 @@ public class SimulatedSystemTest {
 
   private Sattelite generateSecondPlanet() {
     return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR, Vector.NULLVECTOR);
+  }
+
+  private Sattelite generateThirdPlanet() {
+    return new Sattelite("Planet 3", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_3, Vector.NULLVECTOR, Vector.NULLVECTOR);
   }
 
 }
