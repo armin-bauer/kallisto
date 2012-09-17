@@ -1,6 +1,7 @@
 package yeene.kallisto.gui;
 
 import yeene.kallisto.BoundingBox;
+import yeene.kallisto.Constants;
 import yeene.kallisto.Sattelite;
 import yeene.kallisto.SimulatedSystem;
 
@@ -24,7 +25,7 @@ public class RenderTask implements Runnable {
     stars.put("moon", Color.WHITE);
     stars.put("sun", Color.YELLOW);
     stars.put("mercury", Color.GRAY);
-    stars.put("venus", Color.GRAY);
+    stars.put("venus", Color.GREEN);
     stars.put("earth", Color.BLUE);
   }
 
@@ -58,7 +59,7 @@ public class RenderTask implements Runnable {
         // calculate planet position to window coordinates.
         int x = (s.getPosition().getX().multiply(scaleFactorX).intValue()) + (dimension.width / 2);
         int y = (s.getPosition().getY().multiply(scaleFactorY).intValue()) + (dimension.height / 2);
-        int radius = 2+s.getRadius().multiply(scaleFactorX).intValue();
+        int radius = 4+s.getRadius().multiply(scaleFactorX).intValue();
 
 
         final Color c;
@@ -71,7 +72,7 @@ public class RenderTask implements Runnable {
         graphics.fillArc(x-radius, y-radius, radius, radius, 0, 360);
       }
 
-      graphics.drawString("Number of Days since Simulation Start: " + system.getIterationCount() / (24l*60l*60l), 0, 760);
+      graphics.drawString("Number of Days since Simulation Start: " + (Constants.DT.longValue() * system.getIterationCount()) / (24l*60l*60l), 0, 760);
 
       swapBuffers();
       graphics.dispose();
