@@ -23,7 +23,7 @@ public class Constants {
   /**
    * definition of the step size in seconds.
    */
-  public static BigDecimal DT = BigDecimal.valueOf(1);
+  public static BigDecimal DT = BigDecimal.valueOf(60);
 
   /**
    * definition of an epsilon to choose for equality checks on numbers.

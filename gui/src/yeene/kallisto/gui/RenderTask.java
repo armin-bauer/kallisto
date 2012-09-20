@@ -27,6 +27,9 @@ public class RenderTask implements Runnable {
     stars.put("mercury", Color.GRAY);
     stars.put("venus", Color.GREEN);
     stars.put("earth", Color.BLUE);
+    stars.put("mars", Color.RED);
+    stars.put("jupiter", Color.DARK_GRAY);
+    stars.put("saturn", Color.PINK);
   }
 
   private Image offscreenImage;
@@ -61,7 +64,6 @@ public class RenderTask implements Runnable {
         int y = (s.getPosition().getY().multiply(scaleFactorY).intValue()) + (dimension.height / 2);
         int radius = 4+s.getRadius().multiply(scaleFactorX).intValue();
 
-
         final Color c;
         if(stars.keySet().contains(s.getName())) {
           c = stars.get(s.getName());
@@ -70,6 +72,9 @@ public class RenderTask implements Runnable {
         }
         graphics.setColor(c);
         graphics.fillArc(x-radius, y-radius, radius, radius, 0, 360);
+
+        graphics.setColor(Color.WHITE);
+        graphics.drawString(s.getName(), x, y+8);
       }
 
       graphics.drawString("Number of Days since Simulation Start: " + (Constants.DT.longValue() * system.getIterationCount()) / (24l*60l*60l), 0, 760);

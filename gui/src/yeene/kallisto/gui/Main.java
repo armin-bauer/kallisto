@@ -7,6 +7,9 @@ import yeene.kallisto.math.Vector;
 import java.awt.*;
 import java.math.BigDecimal;
 
+import static java.math.BigDecimal.ZERO;
+import static yeene.kallisto.math.Vector.NULLVECTOR;
+
 /**
  * @author yeene
  */
@@ -56,34 +59,36 @@ public class Main {
    * sets initial parameters of the system to simulate.
    */
   private void initialiseSystem() {
-    final BigDecimal sunMass       = new BigDecimal("1.989E30");      // alle in kg
-    final BigDecimal earthMass     = new BigDecimal("5.974E24");
-    final BigDecimal moonMass      = new BigDecimal("7.349E22");
-    final BigDecimal venusMass     = new BigDecimal("4.869E24");
-    final BigDecimal mercuryMass   = new BigDecimal("3.302E23");
-    final BigDecimal sunRadius     = BigDecimal.valueOf(1392700000); // in m
-    final BigDecimal earthRadius   = BigDecimal.valueOf(   6378000);
-    final BigDecimal moonRadius    = BigDecimal.valueOf(    380000);
-    final BigDecimal venusRadius   = BigDecimal.valueOf(   6051000);
-    final BigDecimal mercuryRadius = BigDecimal.valueOf(   4879400);
 
-    final Vector earthPosition   = new Vector( 152100000000.0,            0.0,   0.0);
-    final Vector moonPosition    = new Vector( 152484400000.0,            0.0,   0.0);
-    final Vector venusPosition   = new Vector(-108160000000.0,            0.0,   0.0);
-    final Vector mercuryPosition = new Vector(            0.0,  57909000000.0,   0.0);
+    createObject("sun",     1392700000l,     0l, 1.989E30,             0l);
+    createObject("mercury",    2439000l, 47870l, 3.302E23,   57909000000l);
+    createObject("venus",      6051000l, 35020l, 4.869E24,  108160000000l);
+    createObject("earth",      6378000l, 29780l, 5.974E24,  149600000000l);
+//    createObject("mars",       3396200l, 24130l, 6.419E23,  227990000000l);
+//    createObject("jupiter",    7149200l, 13070l, 1.899E27,  778360000000l);
+//    createObject("saturn",     6023700l,  9690l, 5.685E26, 1433400000000l);
 
-    final Vector earthVelocity   = new Vector(            0.0,       -29780.0,   0.0);   // alle in m/s
-    final Vector moonVelocity    = new Vector(            0.0,         1012.123, 0.0);
-    final Vector venusVelocity   = new Vector(            0.0,        35020.0,   0.0);
-    final Vector mercuryVelocity = new Vector(        47870.0,            0.0,   0.0);
+//    createObject("moon",             0l,     0l, 7.349E22,            0l);
+//    final BigDecimal moonMass      = new BigDecimal("");
+//    final BigDecimal moonRadius    = BigDecimal.valueOf(    380000);
+//    final Vector moonPosition    = new Vector( 152484400000.0,            0.0,   0.0);
+//   final Vector moonVelocity    = new Vector(            0.0,         1012.123, 0.0);
 
-    final Sattelite sun     = new Sattelite("sun",     sunRadius,     sunMass,     Vector.NULLVECTOR,   Vector.NULLVECTOR,   Vector.NULLVECTOR);
-    final Sattelite earth   = new Sattelite("earth",   earthRadius,   earthMass,   earthPosition,       earthVelocity,       Vector.NULLVECTOR);
-    final Sattelite venus   = new Sattelite("venus",   venusRadius,   venusMass,   venusPosition,       venusVelocity,       Vector.NULLVECTOR);
-    final Sattelite mercury = new Sattelite("mercury", mercuryRadius, mercuryMass, mercuryPosition,     mercuryVelocity,     Vector.NULLVECTOR);
-    final Sattelite moon    = new Sattelite("moon",    moonRadius,    moonMass,    moonPosition,        moonVelocity,        Vector.NULLVECTOR);
+  }
 
-    simulatedSystem.addPlanets(sun, earth, venus, mercury);//, moon);
+  /**
+   * add an object to the system in simulation.
+   * @param nameOfObject name of the object to create (aka planet name / id)
+   * @param objectRadius radius of the object (only for displaying)
+   * @param speed initial speed of the object
+   * @param mass mass of the object
+   * @param flyRadius distance to the center of the coordinate system
+   */
+  private void createObject(final String nameOfObject, final long objectRadius, final long speed, final double mass, final long flyRadius) {
+    // add a planet / sun to the system
+    simulatedSystem.addPlanets(
+      new Sattelite(nameOfObject, BigDecimal.valueOf(objectRadius), BigDecimal.valueOf(mass), new Vector(BigDecimal.valueOf(flyRadius), ZERO, ZERO), new Vector(ZERO, BigDecimal.valueOf(speed), ZERO), NULLVECTOR)
+    );
   }
 
   /**
