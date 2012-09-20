@@ -4,6 +4,7 @@
     <classes>
       <class name="yeene.kallisto.math.VectorTest" />
       <class name="yeene.kallisto.SatteliteBodiesStateChangeCollectorTest" />
+      <class name="yeene.kallisto.SimulatedSystemTest" />
     </classes>
   </test>
 </suite>

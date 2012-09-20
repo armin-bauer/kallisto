@@ -71,6 +71,7 @@ public class Main {
     final Vector moonPosition    = new Vector( 152484400000.0,            0.0,   0.0);
     final Vector venusPosition   = new Vector(-108160000000.0,            0.0,   0.0);
     final Vector mercuryPosition = new Vector(            0.0,  57909000000.0,   0.0);
+
     final Vector earthVelocity   = new Vector(            0.0,       -29780.0,   0.0);   // alle in m/s
     final Vector moonVelocity    = new Vector(            0.0,         1012.123, 0.0);
     final Vector venusVelocity   = new Vector(            0.0,        35020.0,   0.0);

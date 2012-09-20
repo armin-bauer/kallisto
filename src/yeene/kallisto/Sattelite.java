@@ -37,7 +37,7 @@ public class Sattelite {
    */
   public void apply(final Vector accellerationDelta) {
     // add the change in accelleration to the current acceleration.
-    acceleration = accellerationDelta.add(accellerationDelta);
+    acceleration = accellerationDelta;
 
     // add the change in velocity to the current velocity.
     velocity = velocity.add(acceleration.mult(Constants.DT));

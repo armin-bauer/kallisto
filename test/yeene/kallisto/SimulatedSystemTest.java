@@ -2,6 +2,7 @@ package yeene.kallisto;
 
 import org.fest.assertions.Condition;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import yeene.kallisto.math.Vector;
 
@@ -86,6 +87,44 @@ public class SimulatedSystemTest {
       isEqualTo(s3.getPosition().getX());
   }
 
+  @Test(dataProvider = "number of steps")
+  public void step_rotationalImpulseAfterStepIsTheSameAsBeforeStep(final int numberOfSteps) throws Exception {
+    // fixture setup: make a simulated System of two objects and note their individual rotational impulse.
+    final Sattelite planet1 = generateMovingFirstPlanet();
+    final Sattelite planet2 = generateMovingSecondPlanet();
+    simulatedSystem.addPlanets(planet1, planet2);
+
+    final BigDecimal impulsePlanet1Before = planet1.getMass().multiply(planet1.getVelocity().length());
+    final BigDecimal impulsePlanet2Before = planet2.getMass().multiply(planet2.getVelocity().length());
+    final BigDecimal impulseSumBefore = impulsePlanet1Before.add(impulsePlanet2Before);
+
+    // execution: perform a step.
+    for(int i=0;i<numberOfSteps;i++) {
+      simulatedSystem.step();
+    }
+
+
+    // assertion: get impulse after stepping and compare to original.
+    final BigDecimal impulsePlanet1After = planet1.getMass().multiply(planet1.getVelocity().length());
+    final BigDecimal impulsePlanet2After = planet2.getMass().multiply(planet2.getVelocity().length());
+    final BigDecimal impulseSumAfter = impulsePlanet1After.add(impulsePlanet2After);
+
+    assertThat(impulseSumBefore.subtract(impulseSumAfter)).
+      describedAs("impulse change on step for planet 1").
+      isZero();
+  }
+
+  @DataProvider(name = "number of steps")
+  public Object[][] numberOfStepsProvider() {
+    return new Object[][] {
+//       new Object[] { 1 },
+//      new Object[] {    10 },
+//      new Object[] {   100 },
+//      new Object[] {  1000 },
+//      new Object[] { 10000 },
+    };
+  }
+
   @Test
   public void step_twoPlanetsCollide_whenTheyHaveNoInitialVelocity() throws Exception {
     // fixture setup: make a simulatedSystem of two planets
@@ -124,8 +163,16 @@ public class SimulatedSystemTest {
     return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR, Vector.NULLVECTOR);
   }
 
+  private Sattelite generateMovingFirstPlanet() {
+    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, new Vector(0.0, 10.0, 0.0), Vector.NULLVECTOR);
+  }
+
   private Sattelite generateSecondPlanet() {
     return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR, Vector.NULLVECTOR);
+  }
+
+  private Sattelite generateMovingSecondPlanet() {
+    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, new Vector(-10.0, 0.0, 0.0), Vector.NULLVECTOR);
   }
 
   private Sattelite generateThirdPlanet() {
