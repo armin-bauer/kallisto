@@ -17,7 +17,6 @@ public class RenderTask implements Runnable {
 
   private SimulatedSystem system;
   private Dimension dimension;
-  private BoundingBox bb;
   private BigDecimal scaleFactorX;
   private BigDecimal scaleFactorY;
   private static Map<String, Color> stars = new HashMap<String, Color>();
@@ -30,6 +29,9 @@ public class RenderTask implements Runnable {
     stars.put("mars", Color.RED);
     stars.put("jupiter", Color.DARK_GRAY);
     stars.put("saturn", Color.PINK);
+    stars.put("uranus", Color.ORANGE);
+    stars.put("neptun", Color.ORANGE);
+    stars.put("pluto", Color.CYAN);
   }
 
   private Image offscreenImage;
@@ -39,7 +41,7 @@ public class RenderTask implements Runnable {
 
     system = Main.getInstance().getSimulatedSystem();
     dimension = f.getSize();
-    bb = system.getBoundingBox();
+    final BoundingBox bb = system.getBoundingBox();
 
     scaleFactorX = BigDecimal.valueOf(0.5).multiply(BigDecimal.valueOf(dimension.getWidth()-10).divide(bb.getWidth(), 32, BigDecimal.ROUND_HALF_UP));
     scaleFactorY = BigDecimal.valueOf(0.5).multiply(BigDecimal.valueOf(dimension.getHeight()-10).divide(bb.getHeight(), 32, BigDecimal.ROUND_HALF_UP));
