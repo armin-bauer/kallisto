@@ -1,7 +1,13 @@
 <?xml version="1.0" ?>
 <suite>
+  <test name="Configuration DSL Tests">
+    <classes>
+      <class name="yeene.kallisto.systembuilder.SystemBuilderTest" />
+    </classes>
+  </test>
   <test name="Kallisto-Tests">
     <classes>
+      <class name="yeene.kallisto.math.MathUtils" />
       <class name="yeene.kallisto.math.VectorTest" />
       <class name="yeene.kallisto.SatteliteBodiesStateChangeCollectorTest" />
       <class name="yeene.kallisto.SimulatedSystemTest" />
