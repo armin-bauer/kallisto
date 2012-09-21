@@ -1,5 +1,7 @@
 package yeene.kallisto.math;
 
+import yeene.kallisto.Constants;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -37,11 +39,17 @@ public class MathUtils {
 
       // x = (x + n/x)/2
       ix = ix.add(n.divide(ix)).shiftRight(1);
-
-      Thread.yield();
     } while (ix.compareTo(ixPrev) != 0);
 
     return new BigDecimal(ix, scale);
   }
 
+  /**
+   * calculates the volume of a sphere
+   * @param objectRadius radius of the object
+   * @return volume of the object
+   */
+  public static BigDecimal sphericVolume(final BigDecimal objectRadius) {
+    return BigDecimal.valueOf(4).multiply(Constants.PI).multiply(objectRadius.pow(3)).divide(BigDecimal.valueOf(3), Constants.PRECISISION, BigDecimal.ROUND_HALF_UP);
+  }
 }

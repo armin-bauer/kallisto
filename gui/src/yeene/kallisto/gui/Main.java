@@ -71,26 +71,45 @@ public class Main {
     createObject("neptun",     2676400l,  5430l, 1.024E26, 4495000000000l);
     createObject("pluto",       119500l,  4720l, 1.250E22, 5906400000000l);
 
-//    createObject("moon",             0l,     0l, 7.349E22,            0l);
-//    final BigDecimal moonMass      = new BigDecimal("");
-//    final BigDecimal moonRadius    = BigDecimal.valueOf(    380000);
-//    final Vector moonPosition    = new Vector( 152484400000.0,            0.0,   0.0);
-//   final Vector moonVelocity    = new Vector(            0.0,         1012.123, 0.0);
-
   }
 
   /**
    * add an object to the system in simulation.
    * @param nameOfObject name of the object to create (aka planet name / id)
    * @param objectRadius radius of the object (only for displaying)
-   * @param speed initial speed of the object
+   * @param velocity initial speed of the object
    * @param mass mass of the object
    * @param flyRadius distance to the center of the coordinate system
    */
-  private void createObject(final String nameOfObject, final long objectRadius, final long speed, final double mass, final long flyRadius) {
+  private void createObject(final String nameOfObject, final long objectRadius, final long velocity, final double mass, final long flyRadius) {
+
+    int pos = 0; //  (int) (Math.random() * 4);
+
+    final Vector position;
+    final Vector speed;
+    switch (pos) {
+      case 0: position = new Vector(BigDecimal.valueOf(flyRadius), ZERO, ZERO);
+              speed = new Vector(ZERO, BigDecimal.valueOf(velocity), ZERO);
+              break;
+
+      case 1: position = new Vector(BigDecimal.valueOf(-flyRadius), ZERO, ZERO);
+              speed = new Vector(ZERO, BigDecimal.valueOf(-velocity), ZERO);
+              break;
+
+      case 2: position = new Vector(ZERO, BigDecimal.valueOf(flyRadius), ZERO);
+              speed = new Vector(BigDecimal.valueOf(velocity), ZERO, ZERO);
+              break;
+
+      case 3:
+      default: position = new Vector(ZERO, BigDecimal.valueOf(-flyRadius), ZERO);
+               speed = new Vector(BigDecimal.valueOf(-velocity), ZERO, ZERO);
+               break;
+    }
+
+
     // add a planet / sun to the system
     simulatedSystem.addPlanets(
-      new Sattelite(nameOfObject, BigDecimal.valueOf(objectRadius), BigDecimal.valueOf(mass), new Vector(BigDecimal.valueOf(flyRadius), ZERO, ZERO), new Vector(ZERO, BigDecimal.valueOf(speed), ZERO), NULLVECTOR)
+      new Sattelite(nameOfObject, BigDecimal.valueOf(objectRadius), BigDecimal.valueOf(mass), position, speed, NULLVECTOR)
     );
   }
 

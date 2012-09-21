@@ -34,4 +34,9 @@ public class Constants {
    * number of decimals after period in calculations
    */
   public static final int PRECISISION = 4;
+
+  /**
+   * PI (= 3.14159...)
+   */
+  public static final BigDecimal PI = BigDecimal.valueOf(3.14159);
 }
