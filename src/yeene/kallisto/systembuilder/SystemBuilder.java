@@ -2,11 +2,15 @@ package yeene.kallisto.systembuilder;
 
 import yeene.kallisto.Sattelite;
 import yeene.kallisto.SimulatedSystem;
+import yeene.kallisto.math.Matrix;
+import yeene.kallisto.math.Vector;
 import yeene.kallisto.systembuilder.dsl.SystemBuilderDSLNamed;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.math.BigDecimal.ZERO;
+import static yeene.kallisto.math.MathUtils.rotationalMatrix;
 import static yeene.kallisto.math.Vector.NULLVECTOR;
 
 /**
@@ -62,12 +66,31 @@ public class SystemBuilder {
 
 
   private Sattelite createObjectFromConfiguration(final DSLObjectConfiguration configuration) {
+
+    final Vector position;
+    final Vector velocity;
+    if(configuration.getInitialPosition() != null) {
+      // use the configured data.
+      position = configuration.getInitialPosition();
+      velocity = configuration.getInitialVelocity();
+    } else {
+      // make by rotating stuff
+      final Vector positionRelative = new Vector(configuration.getBigHalfAxis(), ZERO, ZERO);
+      final Vector velocityRelative = new Vector(ZERO, configuration.getStartSpeed(), ZERO);
+
+      final Matrix m = rotationalMatrix(0.0 /* TODO configuration.getTrackAngle() */, 0.0, configuration.getTheta());
+
+      position = m.multiply(positionRelative);
+      velocity = m.multiply(velocityRelative);
+    }
+
+    // create the sattelite.
     return new Sattelite(
       configuration.getName(),
       configuration.getObjectRadius(),
       configuration.getMass(),
-      configuration.getInitialPosition(),
-      configuration.getInitialVelocity(),
+      position,
+      velocity,
       NULLVECTOR);
   }
 

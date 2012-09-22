@@ -1,13 +1,10 @@
 package yeene.kallisto.gui;
 
-import yeene.kallisto.Sattelite;
 import yeene.kallisto.SimulatedSystem;
-import yeene.kallisto.math.Vector;
+import yeene.kallisto.systembuilder.SystemBuilder;
 
 import java.awt.*;
-import java.math.BigDecimal;
 
-import static java.math.BigDecimal.ZERO;
 import static yeene.kallisto.math.Vector.NULLVECTOR;
 
 /**
@@ -60,57 +57,25 @@ public class Main {
    */
   private void initialiseSystem() {
 
-    createObject("sun",     1392700000l,     0l, 1.989E30,             0l);
-    createObject("mercury",    2439000l, 47870l, 3.302E23,   57909000000l);
-    createObject("venus",      6051000l, 35020l, 4.869E24,  108160000000l);
-    createObject("earth",      6378000l, 29780l, 5.974E24,  149600000000l);
-    createObject("mars",       3396200l, 24130l, 6.419E23,  227990000000l);
-    createObject("jupiter",    7149200l, 13070l, 1.899E27,  778360000000l);
-    createObject("saturn",     6023700l,  9690l, 5.685E26, 1433400000000l);
-    createObject("uranus",     2555900l,  6810l, 8.683E25, 2872400000000l);
-    createObject("neptun",     2676400l,  5430l, 1.024E26, 4495000000000l);
-    createObject("pluto",       119500l,  4720l, 1.250E22, 5906400000000l);
+    this.simulatedSystem = new SystemBuilder() {{
+      // generate the sun.
+      createObject().named("sun").withRadius(1392700000l).withMass(1.989E30).withPosition(NULLVECTOR);
 
-  }
+      // generate the inner planets
+      createObject().named("mercury").withRadius(2439000l).withMass(3.302E23).withEclipticInclination(7.0).withBigHalfAxis(57909000000l).withThetaInDegrees(90).withStartSpeed(47870l);
+      createObject().named("venus").withRadius(6051000l).withMass(4.869E24).withEclipticInclination(3.395).withBigHalfAxis(108160000000l).withThetaInDegrees(200).withStartSpeed(35020l);
+      createObject().named("earth").withRadius(6378000l).withMass(5.974E24).withEclipticInclination(0.0).withBigHalfAxis(149600000000l).withThetaInDegrees(0).withStartSpeed(29780l);
+      createObject().named("mars").withRadius(3396200l).withMass(6.419E23).withEclipticInclination(1.850).withBigHalfAxis(227990000000l).withThetaInDegrees(0).withStartSpeed(24130l);
 
-  /**
-   * add an object to the system in simulation.
-   * @param nameOfObject name of the object to create (aka planet name / id)
-   * @param objectRadius radius of the object (only for displaying)
-   * @param velocity initial speed of the object
-   * @param mass mass of the object
-   * @param flyRadius distance to the center of the coordinate system
-   */
-  private void createObject(final String nameOfObject, final long objectRadius, final long velocity, final double mass, final long flyRadius) {
+      // create the outer planets
+      createObject().named("jupiter").withRadius(7149200l).withMass(1.899E27).withEclipticInclination(1.305).withBigHalfAxis(778360000000l).withThetaInDegrees(270).withStartSpeed(13070l);
+      createObject().named("saturn").withRadius(6023700l).withMass(5.685E26).withEclipticInclination(2.484).withBigHalfAxis(1433400000000l).withThetaInDegrees(270).withStartSpeed(9690l);
+      createObject().named("uranus").withRadius(2555900l).withMass(8.683E25).withEclipticInclination(0.7709).withBigHalfAxis(2872400000000l).withThetaInDegrees(90).withStartSpeed(6810l);
+      createObject().named("neptun").withRadius(2676400l).withMass(1.024E26).withEclipticInclination(1.769).withBigHalfAxis(4495000000000l).withThetaInDegrees(0).withStartSpeed(5430l);
 
-    int pos = 0; //  (int) (Math.random() * 4);
-
-    final Vector position;
-    final Vector speed;
-    switch (pos) {
-      case 0: position = new Vector(BigDecimal.valueOf(flyRadius), ZERO, ZERO);
-              speed = new Vector(ZERO, BigDecimal.valueOf(velocity), ZERO);
-              break;
-
-      case 1: position = new Vector(BigDecimal.valueOf(-flyRadius), ZERO, ZERO);
-              speed = new Vector(ZERO, BigDecimal.valueOf(-velocity), ZERO);
-              break;
-
-      case 2: position = new Vector(ZERO, BigDecimal.valueOf(flyRadius), ZERO);
-              speed = new Vector(BigDecimal.valueOf(velocity), ZERO, ZERO);
-              break;
-
-      case 3:
-      default: position = new Vector(ZERO, BigDecimal.valueOf(-flyRadius), ZERO);
-               speed = new Vector(BigDecimal.valueOf(-velocity), ZERO, ZERO);
-               break;
-    }
-
-
-    // add a planet / sun to the system
-    simulatedSystem.addPlanets(
-      new Sattelite(nameOfObject, BigDecimal.valueOf(objectRadius), BigDecimal.valueOf(mass), position, speed, NULLVECTOR)
-    );
+      // kuiper belt
+      createObject().named("pluto").withRadius(119500l).withMass(1.250E22).withEclipticInclination(17.16).withBigHalfAxis(5906400000000l).withThetaInDegrees(0).withStartSpeed(4720l);
+    }}.getSystem();
   }
 
   /**

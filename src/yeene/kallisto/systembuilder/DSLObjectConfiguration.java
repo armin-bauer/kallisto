@@ -24,6 +24,11 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
   private Vector initialPosition = NULLVECTOR;
   private Vector initialVelocity = NULLVECTOR;
 
+  private Double theta;
+  private BigDecimal bigHalfAxis;
+  private Double trackAngle;
+  private BigDecimal startSpeed;
+
 
   // ------------------------------------------------- DSL Components -----------------------------------------------
   @Override
@@ -45,6 +50,12 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
   }
 
   @Override
+  public SystemBuilderDSLPosition withMass(final double mass) {
+    this.mass = BigDecimal.valueOf(mass);
+    return this;
+  }
+
+  @Override
   public SystemBuilderDSLPosition withDensity(final Double densityOfObject) {
     this.mass = BigDecimal.valueOf(densityOfObject).multiply(MathUtils.sphericVolume(objectRadius));
     return this;
@@ -53,6 +64,34 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
   @Override
   public void withPosition(final Vector position) {
     this.initialPosition = position;
+  }
+
+  @Override
+  public SystemBuilderDSLPosition withEclipticInclination(final double angle) {
+    initialPosition = null;
+    trackAngle = angle;
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPosition withBigHalfAxis(final long halfAxis) {
+    initialPosition = null;
+    this.bigHalfAxis = BigDecimal.valueOf(halfAxis);
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPosition withThetaInDegrees(final int theta) {
+    this.theta = (double) theta;
+    initialPosition = null;
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPosition withStartSpeed(final long startspeed) {
+    this.startSpeed = BigDecimal.valueOf(startspeed);
+    initialPosition = null;
+    return this;
   }
 
 
@@ -75,5 +114,21 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
 
   public Vector getInitialVelocity() {
     return initialVelocity;
+  }
+
+  public Double getTheta() {
+    return theta;
+  }
+
+  public BigDecimal getBigHalfAxis() {
+    return bigHalfAxis;
+  }
+
+  public Double getTrackAngle() {
+    return trackAngle;
+  }
+
+  public BigDecimal getStartSpeed() {
+    return startSpeed;
   }
 }

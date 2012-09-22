@@ -15,6 +15,13 @@ public interface SystemBuilderDSLMass {
   SystemBuilderDSLPosition withMass(final long mass);
 
   /**
+   * set the object mass.
+   * @param mass mass to set
+   * @return the positioning part of the object
+   */
+  SystemBuilderDSLPosition withMass(final double mass);
+
+  /**
    * sets the objects mass by supplying the density. Along with the radius, a
    * mass is calculated.
    * @param densityOfObject density of the described object

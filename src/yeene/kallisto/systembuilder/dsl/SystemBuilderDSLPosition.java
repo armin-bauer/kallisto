@@ -7,7 +7,7 @@ import yeene.kallisto.math.Vector;
  *
  * @author yeene
  */
-public interface SystemBuilderDSLPosition {
+public interface SystemBuilderDSLPosition extends SystemBuilderDSLPositionByAngle {
 
   /**
    * define a position by putting an object to a place in the simulation space
