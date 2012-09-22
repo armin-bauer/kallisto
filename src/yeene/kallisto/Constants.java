@@ -11,7 +11,6 @@ public class Constants {
 
   /**
    * the gravitation constant (http://en.wikipedia.org/wiki/Gravitational_constant)
-   * TODO in km? oder in m?
    */
   public static final BigDecimal G = BigDecimal.valueOf(6.67384E-11);
 
