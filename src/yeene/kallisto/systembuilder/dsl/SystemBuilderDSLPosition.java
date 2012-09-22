@@ -13,6 +13,12 @@ public interface SystemBuilderDSLPosition extends SystemBuilderDSLPositionByAngl
    * define a position by putting an object to a place in the simulation space
    * @param position position to put the object
    */
-  void withPosition(Vector position);
+  SystemBuilderDSLPosition withPosition(Vector position);
+
+  /**
+   * define a velocity directly on a given object
+   * @param velocity velocity to set for the object
+   */
+  SystemBuilderDSLPosition withVelocity(Vector velocity);
 
 }

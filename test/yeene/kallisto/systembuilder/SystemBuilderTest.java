@@ -1,6 +1,7 @@
 package yeene.kallisto.systembuilder;
 
 import org.testng.annotations.Test;
+import yeene.kallisto.Constants;
 import yeene.kallisto.Sattelite;
 import yeene.kallisto.SimulatedSystem;
 import yeene.kallisto.math.Vector;
@@ -109,5 +110,27 @@ public class SystemBuilderTest {
     assertThat(s.getMass()).describedAs("mass of object").isEqualTo(BigDecimal.valueOf(3.302E23));
     assertThat(s.getPosition()).describedAs("position of object").isEqualTo(new Vector(ZERO, BigDecimal.valueOf(57909000000l), ZERO));
     assertThat(s.getVelocity()).describedAs("velocity of object").isEqualTo(new Vector(BigDecimal.valueOf(-47870l), ZERO, ZERO));
+  }
+
+  @Test
+  public void getSystem_setsInitialVelocity() throws Exception {
+    // fixture:
+    final SystemBuilder builder = new SystemBuilder() {{
+      createObject().
+        named("mercury").
+        withRadius(1l).
+        withMass(1d).
+        withVelocity(new Vector(10.0, 0.0, 0.0));
+    }};
+
+    // execution: call getSystem() to generate initial system
+    final SimulatedSystem system = builder.getSystem();
+    system.step();
+
+    // assertion: make assertions on the position of the planet.
+    final Sattelite s = system.getElements().get(0);
+    assertThat(s.getPosition()).
+      describedAs("position of object").
+      isEqualTo(new Vector(Constants.DT.multiply(BigDecimal.TEN).doubleValue(), 0.0, 0.0));
   }
 }

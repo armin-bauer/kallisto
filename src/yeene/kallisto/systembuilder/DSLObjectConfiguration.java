@@ -62,8 +62,15 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
   }
 
   @Override
-  public void withPosition(final Vector position) {
+  public SystemBuilderDSLPosition withPosition(final Vector position) {
     this.initialPosition = position;
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPosition withVelocity(final Vector velocity) {
+    this.initialVelocity = velocity;
+    return this;
   }
 
   @Override
