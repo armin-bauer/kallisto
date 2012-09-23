@@ -2,10 +2,7 @@ package yeene.kallisto.systembuilder;
 
 import yeene.kallisto.math.MathUtils;
 import yeene.kallisto.math.Vector;
-import yeene.kallisto.systembuilder.dsl.SystemBuilderDSLCollisionDetails;
-import yeene.kallisto.systembuilder.dsl.SystemBuilderDSLMass;
-import yeene.kallisto.systembuilder.dsl.SystemBuilderDSLNamed;
-import yeene.kallisto.systembuilder.dsl.SystemBuilderDSLPosition;
+import yeene.kallisto.systembuilder.dsl.*;
 
 import java.math.BigDecimal;
 
@@ -62,13 +59,13 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
   }
 
   @Override
-  public SystemBuilderDSLPosition withPosition(final Vector position) {
+  public SystemBuilderDSLAbsolutePosition withPosition(final Vector position) {
     this.initialPosition = position;
     return this;
   }
 
   @Override
-  public SystemBuilderDSLPosition withVelocity(final Vector velocity) {
+  public SystemBuilderDSLAbsolutePosition withVelocity(final Vector velocity) {
     this.initialVelocity = velocity;
     return this;
   }
