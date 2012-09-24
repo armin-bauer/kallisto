@@ -11,7 +11,6 @@ import java.util.List;
 
 import static java.math.BigDecimal.ZERO;
 import static yeene.kallisto.math.MathUtils.rotationalMatrix;
-import static yeene.kallisto.math.Vector.NULLVECTOR;
 
 /**
  * The SystemBuilder is a Domain Specifig Language for generating Systems of particles
@@ -90,8 +89,8 @@ public class SystemBuilder {
       configuration.getObjectRadius(),
       configuration.getMass(),
       position,
-      velocity,
-      NULLVECTOR);
+      velocity
+    );
   }
 
   private DSLObjectConfiguration saveConfiguration(final DSLObjectConfiguration dslObjectConfiguration) {

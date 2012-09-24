@@ -25,8 +25,8 @@ public class SatteliteBodiesStateChangeCollectorTest {
 
   @BeforeMethod
   public void setUp() throws Exception {
-    baseSattelite = new Sattelite("First", RADIUS_OF_FIRST_BODY, MASS_OF_FIRST_BODY, new Vector(10.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0), new Vector(1.0, 0.0, 0.0));
-    otherSattelite = new Sattelite("Second", RADIUS_OF_SECOND_BODY, MASS_OF_SECOND_BODY, new Vector(100.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0), new Vector(1.0, 0.0, 0.0));
+    baseSattelite = new Sattelite("First", RADIUS_OF_FIRST_BODY, MASS_OF_FIRST_BODY, new Vector(10.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0));
+    otherSattelite = new Sattelite("Second", RADIUS_OF_SECOND_BODY, MASS_OF_SECOND_BODY, new Vector(100.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0));
 
     difference = new SatteliteBodiesStateChangeCollector(baseSattelite);
   }

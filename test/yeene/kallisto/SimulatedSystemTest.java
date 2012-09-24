@@ -160,23 +160,23 @@ public class SimulatedSystemTest {
   }
 
   private Sattelite generateFirstPlanet() {
-    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR, Vector.NULLVECTOR);
+    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR);
   }
 
   private Sattelite generateMovingFirstPlanet() {
-    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, new Vector(0.0, 10.0, 0.0), Vector.NULLVECTOR);
+    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, new Vector(0.0, 10.0, 0.0));
   }
 
   private Sattelite generateSecondPlanet() {
-    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR, Vector.NULLVECTOR);
+    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR);
   }
 
   private Sattelite generateMovingSecondPlanet() {
-    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, new Vector(-10.0, 0.0, 0.0), Vector.NULLVECTOR);
+    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, new Vector(-10.0, 0.0, 0.0));
   }
 
   private Sattelite generateThirdPlanet() {
-    return new Sattelite("Planet 3", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_3, Vector.NULLVECTOR, Vector.NULLVECTOR);
+    return new Sattelite("Planet 3", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_3, Vector.NULLVECTOR);
   }
 
 }
