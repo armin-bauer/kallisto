@@ -149,4 +149,25 @@ public class VectorTest {
     };
   }
 
+  @Test(dataProvider = "vector cross vector, expected result")
+  public void crossProduct_calculatesCrossProduct(final Vector v1, final Vector v2, final Vector expectedResult) throws Exception {
+    // fixture: by dataprovicer
+
+    // execution: calculate cross product from v1 and v2
+    final Vector result = v1.crossProduct(v2);
+
+    // assertion: should be same as expected
+    assertThat(result).describedAs("cross product from vectors").isEqualTo(expectedResult);
+  }
+
+  @DataProvider(name = "vector cross vector, expected result")
+  public Object[][] crossProduct_dataProvider() {
+    return new Object[][] {
+      new Object[] { new Vector(1.0, 0.0, 0.0), new Vector(0.0, 1.0, 0.0), new Vector(0.0, 0.0, 1.0) },
+      new Object[] { new Vector(0.0, 0.0, 1.0), new Vector(1.0, 0.0, 0.0), new Vector(0.0, 1.0, 0.0) },
+      new Object[] { new Vector(0.0, 1.0, 0.0), new Vector(0.0, 0.0, 1.0), new Vector(1.0, 0.0, 0.0) },
+    };
+  }
+
+
 }

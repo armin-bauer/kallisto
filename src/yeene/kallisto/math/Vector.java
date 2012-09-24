@@ -100,4 +100,15 @@ public final class Vector {
       "z=" + z +
       '}';
   }
+
+  public Vector crossProduct(final Vector v) {
+    final BigDecimal a2b3 = getY().multiply(v.getZ());
+    final BigDecimal a3b2 = getZ().multiply(v.getY());
+    final BigDecimal a3b1 = getZ().multiply(v.getX());
+    final BigDecimal a1b3 = getX().multiply(v.getZ());
+    final BigDecimal a1b2 = getX().multiply(v.getY());
+    final BigDecimal a2b1 = getY().multiply(v.getX());
+
+    return new Vector(a2b3.subtract(a3b2), a3b1.subtract(a1b3), a1b2.subtract(a2b1));
+  }
 }

@@ -22,7 +22,7 @@ public class Constants {
   /**
    * definition of the step size in seconds.
    */
-  public static BigDecimal DT = BigDecimal.valueOf(60);
+  public static BigDecimal DT = BigDecimal.valueOf(60*60);
 
   /**
    * definition of an epsilon to choose for equality checks on numbers.
@@ -32,7 +32,7 @@ public class Constants {
   /**
    * number of decimals after period in calculations
    */
-  public static final int PRECISISION = 4;
+  public static final int PRECISISION = 7;
 
   /**
    * PI (= 3.14159...)
