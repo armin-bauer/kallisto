@@ -1,5 +1,6 @@
 package yeene.kallisto;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import yeene.kallisto.math.Vector;
@@ -16,21 +17,28 @@ import static yeene.kallisto.math.Vector.NULLVECTOR;
 public class SimulatedSystemMathTests {
 
   private SimulatedSystem simulatedSystem;
+  private Sattelite planet1;
+  private Sattelite planet2;
+  private Sattelite planet3;
 
 
-  @Test(dataProvider = "number of steps")
-  public void step_rotationalImpulseAfterStepIsTheSameAsBeforeStep(final int numberOfSteps) throws Exception {
-    // fixture setup: make a simulated System of two objects and note their individual rotational impulse.
+  @BeforeClass
+  public void setup() {
     simulatedSystem = new SystemBuilder() {{
       createObject().named("sun").withRadius(1392700000l).withMass(1.989E30).withPosition(NULLVECTOR);
       createObject().named("mercury").withRadius(2439000l).withMass(3.302E23).withEclipticInclination(7.0).withBigHalfAxis(57909000000l).withThetaInDegrees(90).withStartSpeed(47870l);
       createObject().named("venus").withRadius(6051000l).withMass(4.869E24).withEclipticInclination(3.395).withBigHalfAxis(108160000000l).withThetaInDegrees(200).withStartSpeed(35020l);
     }}.getSystem();
 
-    final Sattelite planet1 = simulatedSystem.getElements().get(0);
-    final Sattelite planet2 = simulatedSystem.getElements().get(1);
-    final Sattelite planet3 = simulatedSystem.getElements().get(2);
+    planet1 = simulatedSystem.getElements().get(0);
+    planet2 = simulatedSystem.getElements().get(1);
+    planet3 = simulatedSystem.getElements().get(2);
+  }
 
+
+  @Test(dataProvider = "number of steps")
+  public void step_rotationalImpulseAfterStepIsTheSameAsBeforeStep(final int numberOfSteps) throws Exception {
+    // fixture setup: make a simulated System of two objects and note their individual rotational impulse.
     final Vector centerOfMassBefore = getCenterOfMass(simulatedSystem);
     final Vector rotationalImpulsePlanet1Before = rotationalImpulse(planet1, centerOfMassBefore);
     final Vector rotationalImpulsePlanet2Before = rotationalImpulse(planet2, centerOfMassBefore);
@@ -54,6 +62,9 @@ public class SimulatedSystemMathTests {
       describedAs("impulse change on step for planet system").
       isZero();
   }
+
+
+
 
 
 
