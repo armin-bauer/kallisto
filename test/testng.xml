@@ -12,6 +12,7 @@
       <class name="yeene.kallisto.SatteliteBodiesStateChangeCollectorTest" />
       <class name="yeene.kallisto.SimulatedSystemTest" />
       <class name="yeene.kallisto.math.MatrixTest" />
+      <class name="yeene.kallisto.SimulatedSystemMathTests" />
     </classes>
   </test>
 </suite>

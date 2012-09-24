@@ -2,15 +2,12 @@ package yeene.kallisto;
 
 import org.fest.assertions.Condition;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import yeene.kallisto.math.Vector;
-import yeene.kallisto.systembuilder.SystemBuilder;
 
 import java.math.BigDecimal;
 
 import static org.fest.assertions.Assertions.assertThat;
-import static yeene.kallisto.math.Vector.NULLVECTOR;
 
 /**
  * @author yeene
@@ -89,71 +86,6 @@ public class SimulatedSystemTest {
       isEqualTo(s3.getPosition().getX());
   }
 
-  @Test(dataProvider = "number of steps")
-  public void step_rotationalImpulseAfterStepIsTheSameAsBeforeStep(final int numberOfSteps) throws Exception {
-    // fixture setup: make a simulated System of two objects and note their individual rotational impulse.
-    simulatedSystem = new SystemBuilder() {{
-      createObject().named("sun").withRadius(1392700000l).withMass(1.989E30).withPosition(NULLVECTOR);
-      createObject().named("mercury").withRadius(2439000l).withMass(3.302E23).withEclipticInclination(7.0).withBigHalfAxis(57909000000l).withThetaInDegrees(90).withStartSpeed(47870l);
-    }}.getSystem();
-
-    final Sattelite planet1 = simulatedSystem.getElements().get(0);
-    final Sattelite planet2 = simulatedSystem.getElements().get(1);
-
-    final Vector centerOfMassBefore = getCenterOfMass(simulatedSystem);
-    final Vector rotationalImpulsePlanet1Before = rotationalImpulse(planet1, centerOfMassBefore);
-    final Vector rotationalImpulsePlanet2Before = rotationalImpulse(planet2, centerOfMassBefore);
-
-    // execution: perform a step.
-    for(int i=0;i<numberOfSteps;i++) {
-      simulatedSystem.step();
-    }
-
-
-    // assertion: get impulse after stepping and compare to original.
-    final Vector centerOfMassAfter = getCenterOfMass(simulatedSystem);
-    final Vector rotationalImpulsePlanet1After = rotationalImpulse(planet1, centerOfMassAfter);
-    final Vector rotationalImpulsePlanet2After = rotationalImpulse(planet2, centerOfMassAfter);
-
-    final Vector totalRotationalImpulseBefore = rotationalImpulsePlanet1Before.add(rotationalImpulsePlanet2Before);
-    final Vector totalRotationalImpulseAfter = rotationalImpulsePlanet1After.add(rotationalImpulsePlanet2After);
-
-    assertThat(totalRotationalImpulseBefore.length().subtract(totalRotationalImpulseAfter.length())).
-      describedAs("impulse change on step for planet 1").
-      isZero();
-  }
-
-  private Vector rotationalImpulse(final Sattelite planet, final Vector centerOfMass) {
-    final Vector impulse = planet.getVelocity().mult(planet.getMass());
-    final Vector radius = planet.getPosition().sub(centerOfMass);
-
-    return impulse.crossProduct(radius);
-  }
-
-  private Vector getCenterOfMass(final SimulatedSystem simulatedSystem) {
-    Vector result = Vector.NULLVECTOR;
-    BigDecimal totalMass = BigDecimal.ZERO;
-
-    for(final Sattelite s : simulatedSystem.getElements()) {
-      result = result.add(s.getPosition().mult(s.getMass()));
-      totalMass = totalMass.add(s.getMass());
-    }
-
-    return result.div(totalMass);
-  }
-
-  @DataProvider(name = "number of steps")
-  public Object[][] numberOfStepsProvider() {
-    return new Object[][] {
-      new Object[] {      1 },
-      new Object[] {     10 },
-      new Object[] {    100 },
-      new Object[] {   1000 },
-      new Object[] {  10000 },
-      new Object[] { 100000 },
-    };
-  }
-
   @Test
   public void step_twoPlanetsCollide_whenTheyHaveNoInitialVelocity() throws Exception {
     // fixture setup: make a simulatedSystem of two planets
@@ -192,16 +124,8 @@ public class SimulatedSystemTest {
     return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR, Vector.NULLVECTOR);
   }
 
-  private Sattelite generateMovingFirstPlanet() {
-    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, new Vector(0.0, 10.0, 0.0), Vector.NULLVECTOR);
-  }
-
   private Sattelite generateSecondPlanet() {
     return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR, Vector.NULLVECTOR);
-  }
-
-  private Sattelite generateMovingSecondPlanet() {
-    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, new Vector(-10.0, 0.0, 0.0), Vector.NULLVECTOR);
   }
 
   private Sattelite generateThirdPlanet() {
