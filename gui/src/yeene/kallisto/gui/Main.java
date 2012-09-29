@@ -14,6 +14,7 @@ public class Main extends Frame {
 
   private static Main instance;
   private SimulatedSystem simulatedSystem;
+  private RenderTask renderer;
 
   private Main() {
     setName("Kallisto Rendering Window (AWT)");
@@ -30,6 +31,10 @@ public class Main extends Frame {
     return simulatedSystem;
   }
 
+  public RenderTask getRenderer() {
+    return renderer;
+  }
+
   /**
    * run the application.
    */
@@ -41,10 +46,13 @@ public class Main extends Frame {
     // make the window visible.
     setVisible(true);
     setSize(1024, 768);
+    setResizable(true);
     addWindowListener(new AWTWindowListener());
+    addComponentListener(new AWTWindowSizeListener());
 
     // start the calculation and rendering.
-    final Thread renderThread = new Thread(new RenderTask());
+    renderer = new RenderTask();
+    final Thread renderThread = new Thread(renderer);
     renderThread.setDaemon(true);
     renderThread.start();
 

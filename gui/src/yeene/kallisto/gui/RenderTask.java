@@ -37,9 +37,16 @@ public class RenderTask implements Runnable {
   private Image offscreenImage;
 
   public RenderTask() {
-    final Frame f = Main.getInstance().getFrame();
-
     system = Main.getInstance().getSimulatedSystem();
+    handleResize();
+  }
+
+  /**
+   * handles a resize event and recalculates the scaling factors for
+   * the drawing thread.
+   */
+  public void handleResize() {
+    final Frame f = Main.getInstance().getFrame();
     dimension = f.getSize();
     final BoundingBox bb = system.getBoundingBox();
 
