@@ -3,7 +3,7 @@
   <description><![CDATA[
     Build file for kallisto.
 
-    Kallisto is a tool for solving n-body problems and calculate how particles or other objects like dust particles, asteroids, planets, sattelites, moons, etc. behave in gravitational fields.
+    Kallisto is a tool for solving n-body problems and calculate how particles or other objects like dust particles, asteroids, planets, satellites, moons, etc. behave in gravitational fields.
   ]]></description>
 
   <!-- set global properties for this build -->

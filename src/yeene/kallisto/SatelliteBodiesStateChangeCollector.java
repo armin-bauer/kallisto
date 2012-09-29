@@ -10,12 +10,12 @@ import java.math.BigDecimal;
  *
  * @author yeene
  */
-class SatteliteBodiesStateChangeCollector {
+class SatelliteBodiesStateChangeCollector {
 
   private Vector inflictedAcceleration = new Vector(0.0, 0.0, 0.0);
-  private Sattelite baseObject;
+  private Satellite baseObject;
 
-  public SatteliteBodiesStateChangeCollector(final Sattelite baseObject) {
+  public SatelliteBodiesStateChangeCollector(final Satellite baseObject) {
     this.baseObject = baseObject;
   }
 
@@ -26,9 +26,9 @@ class SatteliteBodiesStateChangeCollector {
    * If other is the same as baseObject, no calculation will be done since an object
    * can't influence itself.
    *
-   * @param other the other sattelite
+   * @param other the other satellite
    */
-  public void influenceSattelite(final Sattelite other) {
+  public void influenceSatellite(final Satellite other) {
     if(baseObject == other) {
       return;
     }
@@ -48,7 +48,7 @@ class SatteliteBodiesStateChangeCollector {
   }
 
   /**
-   * apply the changes to he sattelite.
+   * apply the changes to he satellite.
    */
   public void apply() {
     baseObject.apply(inflictedAcceleration.mult(Constants.G));

@@ -59,7 +59,7 @@ public class MathUtils {
    * @return volume of the object
    */
   public static BigDecimal sphericVolume(final BigDecimal objectRadius) {
-    return valueOf(4).multiply(Constants.PI).multiply(objectRadius.pow(3)).divide(valueOf(3), Constants.PRECISISION, BigDecimal.ROUND_HALF_UP);
+    return valueOf(4).multiply(Constants.PI).multiply(objectRadius.pow(3)).divide(valueOf(3), Constants.PRECISION, BigDecimal.ROUND_HALF_UP);
   }
 
   /**

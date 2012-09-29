@@ -20,7 +20,7 @@ public class MathUtilsTest {
     // fixture: by dataprovider
 
     // execution: call sqrt
-    final BigDecimal result = MathUtils.sqrt(x, Constants.PRECISISION);
+    final BigDecimal result = MathUtils.sqrt(x, Constants.PRECISION);
 
     // assertion: should be as expected
     assertThat(result.compareTo(expectedResult)).

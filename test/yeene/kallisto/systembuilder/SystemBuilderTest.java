@@ -2,7 +2,7 @@ package yeene.kallisto.systembuilder;
 
 import org.testng.annotations.Test;
 import yeene.kallisto.Constants;
-import yeene.kallisto.Sattelite;
+import yeene.kallisto.Satellite;
 import yeene.kallisto.SimulatedSystem;
 import yeene.kallisto.math.Vector;
 
@@ -35,12 +35,12 @@ public class SystemBuilderTest {
     assertThat(system.getElements()).
       describedAs("elements in the generated system").hasSize(1);
 
-    final Sattelite sattelite = system.getElements().get(0);
-    assertThat(sattelite.getName()).describedAs("name of the generated Object").isEqualTo("sun");
-    assertThat(sattelite.getRadius()).describedAs("radius of generated Object").isEqualTo(BigDecimal.valueOf(1000));
-    assertThat(sattelite.getMass()).describedAs("mass of the generated Object").isEqualTo(BigDecimal.valueOf(1200));
-    assertThat(sattelite.getPosition()).describedAs("position of the generated object").isEqualTo(NULLVECTOR);
-    assertThat(sattelite.getPosition()).describedAs("velocity of the generated object").isEqualTo(NULLVECTOR);
+    final Satellite satellite = system.getElements().get(0);
+    assertThat(satellite.getName()).describedAs("name of the generated Object").isEqualTo("sun");
+    assertThat(satellite.getRadius()).describedAs("radius of generated Object").isEqualTo(BigDecimal.valueOf(1000));
+    assertThat(satellite.getMass()).describedAs("mass of the generated Object").isEqualTo(BigDecimal.valueOf(1200));
+    assertThat(satellite.getPosition()).describedAs("position of the generated object").isEqualTo(NULLVECTOR);
+    assertThat(satellite.getPosition()).describedAs("velocity of the generated object").isEqualTo(NULLVECTOR);
   }
 
   @Test
@@ -58,8 +58,8 @@ public class SystemBuilderTest {
     final SimulatedSystem system = builder.getSystem();
 
     // assertion: builder should contain a single object.
-    final Sattelite sattelite = system.getElements().get(0);
-    assertThat(sattelite.getMass().doubleValue()).describedAs("mass of the generated Object").isEqualTo(1200d);
+    final Satellite satellite = system.getElements().get(0);
+    assertThat(satellite.getMass().doubleValue()).describedAs("mass of the generated Object").isEqualTo(1200d);
   }
 
   @Test
@@ -76,13 +76,13 @@ public class SystemBuilderTest {
     assertThat(system.getElements()).
       describedAs("elements in the generated system").hasSize(1);
 
-    final Sattelite sattelite = system.getElements().get(0);
-    assertThat(sattelite.getName()).describedAs("name of the generated Object").isEqualTo("sun");
-    assertThat(sattelite.getRadius()).describedAs("radius of generated Object").isEqualTo(BigDecimal.valueOf(1000));
-    assertThat(sattelite.getPosition()).describedAs("position of the generated object").isEqualTo(NULLVECTOR);
-    assertThat(sattelite.getPosition()).describedAs("velocity of the generated object").isEqualTo(NULLVECTOR);
+    final Satellite satellite = system.getElements().get(0);
+    assertThat(satellite.getName()).describedAs("name of the generated Object").isEqualTo("sun");
+    assertThat(satellite.getRadius()).describedAs("radius of generated Object").isEqualTo(BigDecimal.valueOf(1000));
+    assertThat(satellite.getPosition()).describedAs("position of the generated object").isEqualTo(NULLVECTOR);
+    assertThat(satellite.getPosition()).describedAs("velocity of the generated object").isEqualTo(NULLVECTOR);
 
-    final Double s = sattelite.getMass().subtract(BigDecimal.valueOf(5168962746l)).doubleValue();
+    final Double s = satellite.getMass().subtract(BigDecimal.valueOf(5168962746l)).doubleValue();
     assertThat(Math.abs(s)).describedAs("mass of the generated Object").isLessThan(1);
   }
 
@@ -104,7 +104,7 @@ public class SystemBuilderTest {
     final SimulatedSystem system = builder.getSystem();
 
     // assertion: make assertions on the position of the planet.
-    final Sattelite s = system.getElements().get(0);
+    final Satellite s = system.getElements().get(0);
     assertThat(s.getName()).describedAs("name of object").isEqualTo("mercury");
     assertThat(s.getRadius()).describedAs("radius of object").isEqualTo(BigDecimal.valueOf(2439000));
     assertThat(s.getMass()).describedAs("mass of object").isEqualTo(BigDecimal.valueOf(3.302E23));
@@ -128,7 +128,7 @@ public class SystemBuilderTest {
     system.step();
 
     // assertion: make assertions on the position of the planet.
-    final Sattelite s = system.getElements().get(0);
+    final Satellite s = system.getElements().get(0);
     assertThat(s.getPosition()).
       describedAs("position of object").
       isEqualTo(new Vector(Constants.DT.multiply(BigDecimal.TEN).doubleValue(), 0.0, 0.0));

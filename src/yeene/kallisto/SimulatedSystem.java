@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class SimulatedSystem {
 
-  private List<Sattelite> bodies = new ArrayList<Sattelite>();
+  private List<Satellite> bodies = new ArrayList<Satellite>();
   private long numberOfIterationSteps = 0l;
 
   /**
@@ -24,24 +24,24 @@ public class SimulatedSystem {
    * apply the changes in position, velocity etc. to them.
    */
   public void step() {
-    final List<SatteliteBodiesStateChangeCollector> stateChanges = new ArrayList<SatteliteBodiesStateChangeCollector>();
+    final List<SatelliteBodiesStateChangeCollector> stateChanges = new ArrayList<SatelliteBodiesStateChangeCollector>();
 
     // go through all planets and calculate the differences.
-    for(final Sattelite i : bodies) {
+    for(final Satellite i : bodies) {
 
       // get the base object
-      SatteliteBodiesStateChangeCollector sw = new SatteliteBodiesStateChangeCollector(i);
+      SatelliteBodiesStateChangeCollector sw = new SatelliteBodiesStateChangeCollector(i);
       stateChanges.add(sw);
 
       // calculate other object's influence on this object.
-      for(final Sattelite j : bodies) {
-        sw.influenceSattelite(j);
+      for(final Satellite j : bodies) {
+        sw.influenceSatellite(j);
       }
     }
 
-    // step through the sattelites once more and perform calculations on the
+    // step through the satellites once more and perform calculations on the
     // objects.
-    for(final SatteliteBodiesStateChangeCollector collector : stateChanges) {
+    for(final SatelliteBodiesStateChangeCollector collector : stateChanges) {
       collector.apply();
     }
 
@@ -49,18 +49,18 @@ public class SimulatedSystem {
   }
 
   /**
-   * Add one or more Sattelites to the system.
+   * Add one or more Satellites to the system.
    *
    * @param planets one or multiple objects for the simulation
    */
-  public void addPlanets(final Sattelite... planets) {
+  public void addPlanets(final Satellite... planets) {
     Collections.addAll(bodies, planets);
   }
 
   /**
    * @return the elements in the system.
    */
-  public List<Sattelite> getElements() {
+  public List<Satellite> getElements() {
     return bodies;
   }
 
@@ -84,7 +84,7 @@ public class SimulatedSystem {
     BigDecimal miny = new BigDecimal("99999999999999999999999");
     BigDecimal minz = new BigDecimal("99999999999999999999999");
 
-    for(final Sattelite s : bodies) {
+    for(final Satellite s : bodies) {
       maxx = s.getPosition().getX().compareTo(maxx) > 0 ? s.getPosition().getX() : maxx;
       maxy = s.getPosition().getY().compareTo(maxy) > 0 ? s.getPosition().getY() : maxy;
       maxz = s.getPosition().getZ().compareTo(maxz) > 0 ? s.getPosition().getZ() : maxz;
