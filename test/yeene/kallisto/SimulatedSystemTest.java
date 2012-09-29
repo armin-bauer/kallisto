@@ -2,6 +2,7 @@ package yeene.kallisto;
 
 import org.fest.assertions.Condition;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import yeene.kallisto.math.Vector;
 
@@ -121,15 +122,15 @@ public class SimulatedSystemTest {
   }
 
   private Sattelite generateFirstPlanet() {
-    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR, Vector.NULLVECTOR);
+    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR);
   }
 
   private Sattelite generateSecondPlanet() {
-    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR, Vector.NULLVECTOR);
+    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR);
   }
 
   private Sattelite generateThirdPlanet() {
-    return new Sattelite("Planet 3", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_3, Vector.NULLVECTOR, Vector.NULLVECTOR);
+    return new Sattelite("Planet 3", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_3, Vector.NULLVECTOR);
   }
 
 }

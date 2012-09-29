@@ -14,16 +14,14 @@ public class Sattelite {
   private BigDecimal radius;
 
   private final BigDecimal mass;
-  private Vector acceleration;
   private Vector velocity;
   private Vector position;
 
 
-  public Sattelite(final String name, final BigDecimal radius, final BigDecimal mass, final Vector position, final Vector velocity, final Vector acceleration) {
+  public Sattelite(final String name, final BigDecimal radius, final BigDecimal mass, final Vector position, final Vector velocity) {
     this.name = name;
     this.radius = radius;
     this.mass = mass;
-    this.acceleration = acceleration;
     this.velocity = velocity;
     this.position = position;
 
@@ -33,14 +31,11 @@ public class Sattelite {
   }
 
   /**
-   * @param accellerationDelta difference in accelleration
+   * @param accelleration difference in accelleration
    */
-  public void apply(final Vector accellerationDelta) {
-    // add the change in accelleration to the current acceleration.
-    acceleration = accellerationDelta;
-
+  public void apply(final Vector accelleration) {
     // add the change in velocity to the current velocity.
-    velocity = velocity.add(acceleration.mult(Constants.DT));
+    velocity = velocity.add(accelleration.mult(Constants.DT));
 
     // step forward by a step.
     position = position.add(velocity.mult(Constants.DT));
@@ -58,10 +53,6 @@ public class Sattelite {
     return mass;
   }
 
-  public Vector getAcceleration() {
-    return acceleration;
-  }
-
   public Vector getVelocity() {
     return velocity;
   }
@@ -77,8 +68,6 @@ public class Sattelite {
 
     final Sattelite sattelite = (Sattelite) o;
 
-    if (acceleration != null ? !acceleration.equals(sattelite.acceleration) : sattelite.acceleration != null)
-      return false;
     if (mass != null ? !mass.equals(sattelite.mass) : sattelite.mass != null) return false;
     if (!name.equals(sattelite.name)) return false;
     if (position != null ? !position.equals(sattelite.position) : sattelite.position != null) return false;
