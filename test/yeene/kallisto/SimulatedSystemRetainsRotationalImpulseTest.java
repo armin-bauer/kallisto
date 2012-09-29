@@ -1,6 +1,6 @@
 package yeene.kallisto;
 
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import yeene.kallisto.math.Vector;
@@ -14,7 +14,7 @@ import static yeene.kallisto.math.Vector.NULLVECTOR;
 /**
  * @author yeene
  */
-public class SimulatedSystemMathTests {
+public class SimulatedSystemRetainsRotationalImpulseTest {
 
   private SimulatedSystem simulatedSystem;
   private Sattelite planet1;
@@ -22,7 +22,7 @@ public class SimulatedSystemMathTests {
   private Sattelite planet3;
 
 
-  @BeforeClass
+  @BeforeMethod
   public void setup() {
     simulatedSystem = new SystemBuilder() {{
       createObject().named("sun").withRadius(1392700000l).withMass(1.989E30).withPosition(NULLVECTOR);
@@ -63,20 +63,20 @@ public class SimulatedSystemMathTests {
       isZero();
   }
 
-
-
-
-
-
-
-  private Vector rotationalImpulse(final Sattelite planet, final Vector centerOfMass) {
-    final Vector impulse = planet.getVelocity().mult(planet.getMass());
-    final Vector radius = planet.getPosition().sub(centerOfMass);
-
-    return impulse.crossProduct(radius);
+  @DataProvider(name = "number of steps")
+  public Object[][] numberOfStepsProvider() {
+    return new Object[][] {
+      new Object[] {      1 },
+      new Object[] {     10 },
+      new Object[] {    100 },
+      new Object[] {   1000 },
+      new Object[] {  10000 },
+      new Object[] { 100000 },
+    };
   }
 
-  private Vector getCenterOfMass(final SimulatedSystem simulatedSystem) {
+
+  public static Vector getCenterOfMass(final SimulatedSystem simulatedSystem) {
     Vector result = Vector.NULLVECTOR;
     BigDecimal totalMass = BigDecimal.ZERO;
 
@@ -88,16 +88,11 @@ public class SimulatedSystemMathTests {
     return result.div(totalMass);
   }
 
-  @DataProvider(name = "number of steps")
-  public Object[][] numberOfStepsProvider() {
-    return new Object[][] {
-      new Object[] {      1 },
-      new Object[] {     10 },
-      new Object[] {    100 },
-      new Object[] {   1000 },
-      new Object[] {  10000 },
-      new Object[] { 100000 },
-    };
+  public static Vector rotationalImpulse(final Sattelite planet, final Vector centerOfMass) {
+    final Vector impulse = planet.getVelocity().mult(planet.getMass());
+    final Vector radius = planet.getPosition().sub(centerOfMass);
+
+    return impulse.crossProduct(radius);
   }
 
 }
