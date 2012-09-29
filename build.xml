@@ -17,7 +17,7 @@
   <taskdef resource="testngtasks" classpath="lib/testing/testng-6.5.1.jar"/>
 
   <!-- define targets -->
-  <target name="dist" depends="init,compile,pack,test" />
+  <target name="dist" depends="init,compile,javadoc,pack,test" />
 
   <target name="clean">
     <delete dir="${build}" />
@@ -50,6 +50,22 @@
         <attribute name="Main-Class" value="yeene.kallisto.gui.Main" />
       </manifest>
     </jar>
+  </target>
+
+  <target name="javadoc">
+    <!-- generate output dir for javadoc -->
+    <mkdir dir="${dist}/javadoc" />
+
+    <!-- generate javadoc -->
+    <javadoc destdir="${dist}/javadoc" locale="en_US" source="1.6">
+      <sourcepath>
+        <pathelement path="${src}" />
+        <pathelement path="${guisrc}/src" />
+      </sourcepath>
+    </javadoc>
+
+   <!-- pack javadoc to jar -->
+   <jar destfile="${dist}/kallisto-javadoc.jar" basedir="${dist}/javadoc" />
   </target>
 
   <target name="test">
