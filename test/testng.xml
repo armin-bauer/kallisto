@@ -1,10 +1,15 @@
 <?xml version="1.0" ?>
-<suite>
+<suite name="Kallisto Test" verbose="2">
+  <listeners>
+    <listener class-name="mockit.integration.testng.Initializer" />
+  </listeners>
+
   <test name="Configuration DSL Tests">
     <classes>
       <class name="yeene.kallisto.systembuilder.SystemBuilderTest" />
     </classes>
   </test>
+
   <test name="Kallisto-Tests">
     <classes>
       <class name="yeene.kallisto.math.MathUtils" />

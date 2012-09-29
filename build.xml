@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project name="Kallisto" default="dist" basedir=".">
+  <description><![CDATA[
+    Build file for kallisto.
+
+    Kallisto is a tool for solving n-body problems and calculate how particles or other objects like dust particles, asteroids, planets, sattelites, moons, etc. behave in gravitational fields.
+  ]]></description>
+
+  <!-- set global properties for this build -->
+  <property name="guisrc" location="gui" />
+  <property name="src" location="src"/>
+  <property name="test-src" location="test"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+
+  <!-- include testng-target -->
+  <taskdef resource="testngtasks" classpath="lib/testing/testng-6.5.1.jar"/>
+
+  <!-- define targets -->
+  <target name="dist" depends="init,compile,pack,test" />
+
+  <target name="clean">
+    <delete dir="${build}" />
+    <delete dir="${dist}" />
+  </target>
+
+  <target name="init">
+    <mkdir dir="${build}" />
+    <mkdir dir="${build}/app" />
+    <mkdir dir="${dist}" />
+  </target>
+
+  <target name="compile">
+    <!-- copy property and resource files -->
+    <copy todir="${build}/app">
+      <fileset dir="${src}" includes="**/*.properties" />
+      <fileset dir="${guisrc}" includes="**/*.properties" />
+    </copy>
+
+    <!-- compile data -->
+    <javac destdir="${build}/app" debug="on" compiler="modern" includeAntRuntime="no" target="1.6" source="1.6">
+      <src path="${src}" />
+      <src path="${guisrc}" />
+    </javac>
+  </target>
+
+  <target name="pack">
+    <jar destfile="${dist}/kallisto.jar" basedir="${build}/app">
+      <manifest>
+        <attribute name="Main-Class" value="yeene.kallisto.gui.Main" />
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="test">
+    <!-- generate output dir for test classes and copy properties etc there -->
+    <mkdir dir="${build}/test-classes" />
+    <mkdir dir="${dist}/test" />
+    <copy todir="${build}/test-classes">
+      <fileset dir="${test-src}" includes="**/*.properties" />
+    </copy>
+
+    <!-- compile test-classes -->
+    <javac destdir="${build}/test-classes" debug="on" compiler="modern" includeAntRuntime="no" target="1.6" source="1.6">
+      <src path="${test-src}" />
+      <classpath>
+        <fileset dir="lib/testing">
+          <include name="fest-assert-1.4.jar" />
+          <include name="fest-util-1.1.6.jar" />
+          <include name="jmockit.jar" />
+          <include name="testng-6.5.1.jar" />
+        </fileset>
+        <pathelement location="${dist}/kallisto.jar" />
+      </classpath>
+    </javac>
+
+    <!-- run testng -->
+    <testng haltonfailure="true" verbose="2" outputdir="${dist}/test">
+      <xmlfileset dir="${test-src}" includes="testng.xml" />
+      <classpath>
+        <fileset dir="lib/testing">
+          <include name="fest-assert-1.4.jar" />
+          <include name="fest-util-1.1.6.jar" />
+          <include name="jmockit.jar" />
+          <include name="testng-6.5.1.jar" />
+        </fileset>
+        <pathelement location="${build}/test-classes" />
+        <pathelement location="${dist}/kallisto.jar" />
+      </classpath>
+    </testng>
+  </target>
+</project>
