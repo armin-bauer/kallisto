@@ -13,6 +13,8 @@ import static java.math.BigDecimal.ZERO;
 import static java.math.BigDecimal.valueOf;
 
 /**
+ * some misc math utils.
+ *
  * @author yeene
  */
 public class MathUtils {
