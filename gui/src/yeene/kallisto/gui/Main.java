@@ -10,19 +10,20 @@ import static yeene.kallisto.math.Vector.NULLVECTOR;
 /**
  * @author yeene
  */
-public class Main {
+public class Main extends Frame {
 
   private static Main instance;
-  private final Frame frame;
   private SimulatedSystem simulatedSystem;
 
   private Main() {
-    frame = new Frame("Kallisto Rendering Window (AWT)");
+    setName("Kallisto Rendering Window (AWT)");
+
+
     simulatedSystem = new SimulatedSystem();
   }
 
   public Frame getFrame() {
-    return frame;
+    return this;
   }
 
   public SimulatedSystem getSimulatedSystem() {
@@ -38,9 +39,9 @@ public class Main {
     initialiseSystem();
 
     // make the window visible.
-    frame.setVisible(true);
-    frame.setSize(1024, 768);
-    frame.addWindowListener(new AWTWindowListener());
+    setVisible(true);
+    setSize(1024, 768);
+    addWindowListener(new AWTWindowListener());
 
     // start the calculation and rendering.
     final Thread renderThread = new Thread(new RenderTask());
