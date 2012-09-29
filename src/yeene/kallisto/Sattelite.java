@@ -6,6 +6,16 @@ import java.math.BigDecimal;
 
 /**
  * Definition of an Object in the simulation.
+ *
+ * The Object has properties that are used for graphical representation like
+ *  - name
+ *  - radius
+ *
+ * and it has properties that are used for calculating the behaviour in the simulation
+ *  - mass
+ *  - velocity
+ *  - position
+ *
  * @author yeene
  */
 public class Sattelite {
@@ -31,7 +41,7 @@ public class Sattelite {
   }
 
   /**
-   * @param accelleration difference in accelleration
+   * @param accelleration accelleration that is applied on the object
    */
   public void apply(final Vector accelleration) {
     // add the change in velocity to the current velocity.

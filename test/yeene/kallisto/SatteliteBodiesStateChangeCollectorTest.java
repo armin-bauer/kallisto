@@ -39,7 +39,7 @@ public class SatteliteBodiesStateChangeCollectorTest {
     difference.influenceSattelite(baseSattelite);
 
     // assertion: no direction change.
-    assertThat(difference.getAccellerationDifference()).
+    assertThat(difference.getInflictedAcceleration()).
       describedAs("acceleration").
       isEqualTo(new Vector(0.0, 0.0, 0.0));
   }
@@ -52,7 +52,7 @@ public class SatteliteBodiesStateChangeCollectorTest {
     difference.influenceSattelite(otherSattelite);
 
     // assertion: acceleration change
-    assertThat(difference.getAccellerationDifference()).
+    assertThat(difference.getInflictedAcceleration()).
       describedAs("acceleration").
       isEqualTo(new Vector(2469.1358, 0.0, 0.0));
   }

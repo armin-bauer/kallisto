@@ -5,7 +5,7 @@ import yeene.kallisto.Constants;
 import java.math.BigDecimal;
 
 /**
- * Implementation of a basic math vector class.
+ * Implementation of a basic vector math-class.
  *
  * @author yeene
  */

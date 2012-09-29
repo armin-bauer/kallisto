@@ -8,7 +8,7 @@ import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
 
 /**
- * primitive matrix calculation functionality.
+ * primitive matrix calculation functions.
  *
  * @author yeene
  */
