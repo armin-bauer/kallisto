@@ -58,15 +58,15 @@ public final class Vector {
 
   public Vector div(final Double k) {
     final BigDecimal d = BigDecimal.valueOf(k);
-    return new Vector( x.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
-                       y.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
-                       z.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP));
+    return new Vector( x.divide(d, Constants.PRECISION, BigDecimal.ROUND_HALF_UP),
+                       y.divide(d, Constants.PRECISION, BigDecimal.ROUND_HALF_UP),
+                       z.divide(d, Constants.PRECISION, BigDecimal.ROUND_HALF_UP));
   }
 
   public Vector div(final BigDecimal d) {
-    return new Vector( x.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
-                       y.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP),
-                       z.divide(d, Constants.PRECISISION, BigDecimal.ROUND_HALF_UP));
+    return new Vector( x.divide(d, Constants.PRECISION, BigDecimal.ROUND_HALF_UP),
+                       y.divide(d, Constants.PRECISION, BigDecimal.ROUND_HALF_UP),
+                       z.divide(d, Constants.PRECISION, BigDecimal.ROUND_HALF_UP));
   }
 
   public BigDecimal length() {

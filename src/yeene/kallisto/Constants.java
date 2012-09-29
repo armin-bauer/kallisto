@@ -32,7 +32,7 @@ public class Constants {
   /**
    * number of decimals after period in calculations
    */
-  public static final int PRECISISION = 8;
+  public static final int PRECISION = 8;
 
   /**
    * PI (= 3.14159...)

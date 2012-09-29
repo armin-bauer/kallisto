@@ -2,7 +2,7 @@ package yeene.kallisto.gui;
 
 import yeene.kallisto.BoundingBox;
 import yeene.kallisto.Constants;
-import yeene.kallisto.Sattelite;
+import yeene.kallisto.Satellite;
 import yeene.kallisto.SimulatedSystem;
 
 import java.awt.*;
@@ -67,7 +67,7 @@ public class RenderTask implements Runnable {
       final Graphics graphics = getGraphics();
 
       graphics.fillRect(0, 0, dimension.width, dimension.height);
-      for(final Sattelite s : system.getElements()) {
+      for(final Satellite s : system.getElements()) {
         // calculate planet position to window coordinates.
         int x = (s.getPosition().getX().multiply(scaleFactorX).intValue()) + (dimension.width / 2);
         int y = (s.getPosition().getY().multiply(scaleFactorY).intValue()) + (dimension.height / 2);

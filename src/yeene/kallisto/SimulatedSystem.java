@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class SimulatedSystem {
 
-  private List<Sattelite> bodies = new ArrayList<Sattelite>();
+  private List<Satellite> bodies = new ArrayList<Satellite>();
   private long numberOfIterationSteps = 0l;
 
   /**
@@ -27,14 +27,14 @@ public class SimulatedSystem {
     final List<SatteliteBodiesStateChangeCollector> stateChanges = new ArrayList<SatteliteBodiesStateChangeCollector>();
 
     // go through all planets and calculate the differences.
-    for(final Sattelite i : bodies) {
+    for(final Satellite i : bodies) {
 
       // get the base object
       SatteliteBodiesStateChangeCollector sw = new SatteliteBodiesStateChangeCollector(i);
       stateChanges.add(sw);
 
       // calculate other object's influence on this object.
-      for(final Sattelite j : bodies) {
+      for(final Satellite j : bodies) {
         sw.influenceSattelite(j);
       }
     }
@@ -53,14 +53,14 @@ public class SimulatedSystem {
    *
    * @param planets one or multiple objects for the simulation
    */
-  public void addPlanets(final Sattelite... planets) {
+  public void addPlanets(final Satellite... planets) {
     Collections.addAll(bodies, planets);
   }
 
   /**
    * @return the elements in the system.
    */
-  public List<Sattelite> getElements() {
+  public List<Satellite> getElements() {
     return bodies;
   }
 
@@ -84,7 +84,7 @@ public class SimulatedSystem {
     BigDecimal miny = new BigDecimal("99999999999999999999999");
     BigDecimal minz = new BigDecimal("99999999999999999999999");
 
-    for(final Sattelite s : bodies) {
+    for(final Satellite s : bodies) {
       maxx = s.getPosition().getX().compareTo(maxx) > 0 ? s.getPosition().getX() : maxx;
       maxy = s.getPosition().getY().compareTo(maxy) > 0 ? s.getPosition().getY() : maxy;
       maxz = s.getPosition().getZ().compareTo(maxz) > 0 ? s.getPosition().getZ() : maxz;

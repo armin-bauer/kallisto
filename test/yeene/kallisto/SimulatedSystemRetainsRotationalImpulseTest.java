@@ -17,9 +17,9 @@ import static yeene.kallisto.math.Vector.NULLVECTOR;
 public class SimulatedSystemRetainsRotationalImpulseTest {
 
   private SimulatedSystem simulatedSystem;
-  private Sattelite planet1;
-  private Sattelite planet2;
-  private Sattelite planet3;
+  private Satellite planet1;
+  private Satellite planet2;
+  private Satellite planet3;
 
 
   @BeforeMethod
@@ -80,7 +80,7 @@ public class SimulatedSystemRetainsRotationalImpulseTest {
     Vector result = Vector.NULLVECTOR;
     BigDecimal totalMass = BigDecimal.ZERO;
 
-    for(final Sattelite s : simulatedSystem.getElements()) {
+    for(final Satellite s : simulatedSystem.getElements()) {
       result = result.add(s.getPosition().mult(s.getMass()));
       totalMass = totalMass.add(s.getMass());
     }
@@ -88,7 +88,7 @@ public class SimulatedSystemRetainsRotationalImpulseTest {
     return result.div(totalMass);
   }
 
-  public static Vector rotationalImpulse(final Sattelite planet, final Vector centerOfMass) {
+  public static Vector rotationalImpulse(final Satellite planet, final Vector centerOfMass) {
     final Vector impulse = planet.getVelocity().mult(planet.getMass());
     final Vector radius = planet.getPosition().sub(centerOfMass);
 

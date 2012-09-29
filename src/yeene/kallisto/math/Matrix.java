@@ -24,7 +24,7 @@ public class Matrix {
     this.data = data;
     for(int i=0;i<3;i++) {
       for(int j=0;j<3;j++) {
-        data[i][j] = data[i][j].setScale(Constants.PRECISISION, BigDecimal.ROUND_HALF_UP);
+        data[i][j] = data[i][j].setScale(Constants.PRECISION, BigDecimal.ROUND_HALF_UP);
       }
     }
   }
@@ -50,15 +50,15 @@ public class Matrix {
   public Matrix multiply(final Matrix m) {
     final BigDecimal[][] result = new BigDecimal[][] { {ZERO, ZERO, ZERO}, {ZERO, ZERO, ZERO}, {ZERO, ZERO, ZERO} };
 
-    for(int i=0;i<3;i++) {
-      for(int j=0;j<3;j++) {
-        BigDecimal xyresult = BigDecimal.ZERO;
+    for(int i = 0; i < 3; i++) {
+      for(int j = 0; j < 3; j++) {
+        BigDecimal xyResult = BigDecimal.ZERO;
 
         for(int k=0;k<3;k++) {
-          xyresult = xyresult.add(data[i][k].multiply(m.data[k][j]));
+          xyResult = xyResult.add(data[i][k].multiply(m.data[k][j]));
         }
 
-        result[i][j] = xyresult;
+        result[i][j] = xyResult;
       }
     }
 

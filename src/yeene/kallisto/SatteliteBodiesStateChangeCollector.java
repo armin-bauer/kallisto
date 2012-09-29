@@ -13,9 +13,9 @@ import java.math.BigDecimal;
 class SatteliteBodiesStateChangeCollector {
 
   private Vector inflictedAcceleration = new Vector(0.0, 0.0, 0.0);
-  private Sattelite baseObject;
+  private Satellite baseObject;
 
-  public SatteliteBodiesStateChangeCollector(final Sattelite baseObject) {
+  public SatteliteBodiesStateChangeCollector(final Satellite baseObject) {
     this.baseObject = baseObject;
   }
 
@@ -28,7 +28,7 @@ class SatteliteBodiesStateChangeCollector {
    *
    * @param other the other sattelite
    */
-  public void influenceSattelite(final Sattelite other) {
+  public void influenceSattelite(final Satellite other) {
     if(baseObject == other) {
       return;
     }

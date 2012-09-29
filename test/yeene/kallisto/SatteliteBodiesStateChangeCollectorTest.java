@@ -19,16 +19,16 @@ public class SatteliteBodiesStateChangeCollectorTest {
   private static final BigDecimal MASS_OF_SECOND_BODY = BigDecimal.valueOf(20000000);
 
   private SatteliteBodiesStateChangeCollector difference;
-  private Sattelite baseSattelite;
-  private Sattelite otherSattelite;
+  private Satellite baseSatellite;
+  private Satellite otherSatellite;
 
 
   @BeforeMethod
   public void setUp() throws Exception {
-    baseSattelite = new Sattelite("First", RADIUS_OF_FIRST_BODY, MASS_OF_FIRST_BODY, new Vector(10.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0));
-    otherSattelite = new Sattelite("Second", RADIUS_OF_SECOND_BODY, MASS_OF_SECOND_BODY, new Vector(100.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0));
+    baseSatellite = new Satellite("First", RADIUS_OF_FIRST_BODY, MASS_OF_FIRST_BODY, new Vector(10.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0));
+    otherSatellite = new Satellite("Second", RADIUS_OF_SECOND_BODY, MASS_OF_SECOND_BODY, new Vector(100.0, 10.0, 10.0), new Vector(1.0, 0.0, 0.0));
 
-    difference = new SatteliteBodiesStateChangeCollector(baseSattelite);
+    difference = new SatteliteBodiesStateChangeCollector(baseSatellite);
   }
 
   @Test
@@ -36,7 +36,7 @@ public class SatteliteBodiesStateChangeCollectorTest {
     // fixture setup:
 
     // execution; caclulate influence.
-    difference.influenceSattelite(baseSattelite);
+    difference.influenceSattelite(baseSatellite);
 
     // assertion: no direction change.
     assertThat(difference.getInflictedAcceleration()).
@@ -49,7 +49,7 @@ public class SatteliteBodiesStateChangeCollectorTest {
     // fixture setup:
 
     // execution: calculate influence
-    difference.influenceSattelite(otherSattelite);
+    difference.influenceSattelite(otherSatellite);
 
     // assertion: acceleration change
     assertThat(difference.getInflictedAcceleration()).

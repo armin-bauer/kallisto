@@ -18,7 +18,7 @@ import java.math.BigDecimal;
  *
  * @author yeene
  */
-public class Sattelite {
+public class Satellite {
 
   private final String name;
   private BigDecimal radius;
@@ -28,7 +28,7 @@ public class Sattelite {
   private Vector position;
 
 
-  public Sattelite(final String name, final BigDecimal radius, final BigDecimal mass, final Vector position, final Vector velocity) {
+  public Satellite(final String name, final BigDecimal radius, final BigDecimal mass, final Vector position, final Vector velocity) {
     this.name = name;
     this.radius = radius;
     this.mass = mass;
@@ -76,13 +76,13 @@ public class Sattelite {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    final Sattelite sattelite = (Sattelite) o;
+    final Satellite satellite = (Satellite) o;
 
-    if (mass != null ? !mass.equals(sattelite.mass) : sattelite.mass != null) return false;
-    if (!name.equals(sattelite.name)) return false;
-    if (position != null ? !position.equals(sattelite.position) : sattelite.position != null) return false;
-    if (radius != null ? !radius.equals(sattelite.radius) : sattelite.radius != null) return false;
-    if (velocity != null ? !velocity.equals(sattelite.velocity) : sattelite.velocity != null) return false;
+    if (mass != null ? !mass.equals(satellite.mass) : satellite.mass != null) return false;
+    if (!name.equals(satellite.name)) return false;
+    if (position != null ? !position.equals(satellite.position) : satellite.position != null) return false;
+    if (radius != null ? !radius.equals(satellite.radius) : satellite.radius != null) return false;
+    if (velocity != null ? !velocity.equals(satellite.velocity) : satellite.velocity != null) return false;
 
     return true;
   }

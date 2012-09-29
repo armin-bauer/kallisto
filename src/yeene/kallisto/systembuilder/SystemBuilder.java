@@ -1,6 +1,6 @@
 package yeene.kallisto.systembuilder;
 
-import yeene.kallisto.Sattelite;
+import yeene.kallisto.Satellite;
 import yeene.kallisto.SimulatedSystem;
 import yeene.kallisto.math.Matrix;
 import yeene.kallisto.math.Vector;
@@ -64,7 +64,7 @@ public class SystemBuilder {
   }
 
 
-  private Sattelite createObjectFromConfiguration(final DSLObjectConfiguration configuration) {
+  private Satellite createObjectFromConfiguration(final DSLObjectConfiguration configuration) {
 
     final Vector position;
     final Vector velocity;
@@ -83,8 +83,8 @@ public class SystemBuilder {
       velocity = m.multiply(velocityRelative);
     }
 
-    // create the sattelite.
-    return new Sattelite(
+    // create the satellite.
+    return new Satellite(
       configuration.getName(),
       configuration.getObjectRadius(),
       configuration.getMass(),

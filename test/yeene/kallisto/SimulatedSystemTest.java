@@ -2,7 +2,6 @@ package yeene.kallisto;
 
 import org.fest.assertions.Condition;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import yeene.kallisto.math.Vector;
 
@@ -44,8 +43,8 @@ public class SimulatedSystemTest {
   @Test
   public void step_twoPlanetsFallNearEachOther_whenTheyHaveNoInitialVelocity() throws Exception {
     // fixture setup: make a simulatedSystem of two planets.
-    final Sattelite planet1 = generateFirstPlanet();
-    final Sattelite planet2 = generateSecondPlanet();
+    final Satellite planet1 = generateFirstPlanet();
+    final Satellite planet2 = generateSecondPlanet();
 
     simulatedSystem.addPlanets(planet1, planet2);
 
@@ -65,9 +64,9 @@ public class SimulatedSystemTest {
   @Test
   public void step_hasSymmetricalResult_whenOneCentralBodyIsPulledBetweenTwoOthers() throws Exception {
     // fixture:
-    final Sattelite s1 = generateFirstPlanet();
-    final Sattelite s2 = generateSecondPlanet();
-    final Sattelite s3 = generateThirdPlanet();
+    final Satellite s1 = generateFirstPlanet();
+    final Satellite s2 = generateSecondPlanet();
+    final Satellite s3 = generateThirdPlanet();
     simulatedSystem.addPlanets(s1, s2, s3);
 
     // execution: perform one step
@@ -90,8 +89,8 @@ public class SimulatedSystemTest {
   @Test
   public void step_twoPlanetsCollide_whenTheyHaveNoInitialVelocity() throws Exception {
     // fixture setup: make a simulatedSystem of two planets
-    final Sattelite planet1 = generateFirstPlanet();
-    final Sattelite planet2 = generateSecondPlanet();
+    final Satellite planet1 = generateFirstPlanet();
+    final Satellite planet2 = generateSecondPlanet();
 
     simulatedSystem.addPlanets(planet1, planet2);
 
@@ -121,16 +120,16 @@ public class SimulatedSystemTest {
       });
   }
 
-  private Sattelite generateFirstPlanet() {
-    return new Sattelite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR);
+  private Satellite generateFirstPlanet() {
+    return new Satellite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR);
   }
 
-  private Sattelite generateSecondPlanet() {
-    return new Sattelite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR);
+  private Satellite generateSecondPlanet() {
+    return new Satellite("Planet 2", BigDecimal.TEN, BigDecimal.valueOf(300000000000l), INITIAL_POSITION_PLANET_2, Vector.NULLVECTOR);
   }
 
-  private Sattelite generateThirdPlanet() {
-    return new Sattelite("Planet 3", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_3, Vector.NULLVECTOR);
+  private Satellite generateThirdPlanet() {
+    return new Satellite("Planet 3", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_3, Vector.NULLVECTOR);
   }
 
 }
