@@ -133,4 +133,27 @@ public class SystemBuilderTest {
       describedAs("position of object").
       isEqualTo(new Vector(Constants.DT.multiply(BigDecimal.TEN).doubleValue(), 0.0, 0.0));
   }
+
+  @Test
+  public void getSystem_canCreateObjectsThatAreDefinedRelativelyToOtherObjects() throws Exception {
+    // fixture: describe a system from moon and earth with the moon being defined relatively to the earth.
+    final SystemBuilder builder = new SystemBuilder() {{
+      createObject().named("sun").withRadius(1392700000l).withMass(1.989E30).withPosition(NULLVECTOR);
+
+      // generate the inner planets
+      createObject().named("earth").withRadius(6378000l).withMass(5.974E24).withEclipticInclination(0.0).withBigHalfAxis(149600000000l).withThetaInDegrees(0).withStartSpeed(29780l);
+      createObject().named("moon").withRadius(3475l).withMass(7.349E22).startingFrom("earth").withDistance(384400000l).withThetaInDegrees(0).withRelativeEclipticInclination(0.0).withRelativeStartSpeed(1032l);
+    }};
+
+    // execution: build the system
+    final SimulatedSystem system = builder.getSystem();
+
+    // assertion: check properties of moon.
+    final Satellite earth = system.getElements().get(1);
+    final Satellite moon = system.getElements().get(2);
+
+    assertThat(moon.getPosition()).describedAs("initial position of the moon").isEqualTo(earth.getPosition().add(new Vector(384400000.0, 0.0, 0.0)));
+    assertThat(moon.getVelocity()).describedAs("initial velocity of the moon").isEqualTo(earth.getVelocity().add(new Vector(0.0, 1032.0, 0.0)));
+  }
+
 }

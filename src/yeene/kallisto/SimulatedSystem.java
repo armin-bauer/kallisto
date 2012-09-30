@@ -71,6 +71,21 @@ public class SimulatedSystem {
     return numberOfIterationSteps;
   }
 
+  /**
+   * find an object by it's given name.
+   * @param name name of the object to find.
+   * @return the object found or null if not found.
+   */
+  public Satellite find(final String name) {
+    for(final Satellite s : bodies) {
+      if(s.getName().equals(name)) {
+        return s;
+      }
+    }
+
+    return null;
+  }
+
 
   /**
    * Convenience Method for geting a bounding box around the stuff

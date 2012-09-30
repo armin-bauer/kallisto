@@ -5,6 +5,7 @@ package yeene.kallisto.systembuilder.dsl;
  *
  * @author yeene
  */
-public interface SystemBuilderDSLPosition extends SystemBuilderDSLPositionByAngle, SystemBuilderDSLAbsolutePosition {
+public interface SystemBuilderDSLPosition extends SystemBuilderDSLPositionByAngle, SystemBuilderDSLAbsolutePosition, SystemBuilderDSLPositionRelativeTo {
+
 
 }

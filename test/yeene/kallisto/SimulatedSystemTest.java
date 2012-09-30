@@ -120,6 +120,23 @@ public class SimulatedSystemTest {
       });
   }
 
+  @Test
+  public void find_looksUpAnObjectFromTheSystem() throws Exception {
+    // fixture: make system of two objects
+    final Satellite planet1 = generateFirstPlanet();
+    final Satellite planet2 = generateSecondPlanet();
+
+    simulatedSystem.addPlanets(planet1, planet2);
+
+    // execution: perform find on the system
+    final Satellite planet = simulatedSystem.find("Planet 2");
+
+    // assertion: planet should be the same as planet2
+    assertThat(planet).describedAs("planet returned by find").isEqualTo(planet2);
+  }
+
+
+
   private Satellite generateFirstPlanet() {
     return new Satellite("Planet 1", BigDecimal.TEN, BigDecimal.valueOf(8000000000000l), INITIAL_POSITION_PLANET_1, Vector.NULLVECTOR);
   }
