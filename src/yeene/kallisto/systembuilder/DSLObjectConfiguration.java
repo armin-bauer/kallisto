@@ -20,11 +20,16 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
   private BigDecimal mass = BigDecimal.ZERO;
   private Vector initialPosition = NULLVECTOR;
   private Vector initialVelocity = NULLVECTOR;
+  private String relative = null;
 
   private Double theta;
   private BigDecimal bigHalfAxis;
   private Double trackAngle;
   private BigDecimal startSpeed;
+  private BigDecimal velocityRelative;
+  private Double eclipticInclinationRelative;
+  private Double thetaRelative;
+  private BigDecimal distanceFromRelative;
 
 
   // ------------------------------------------------- DSL Components -----------------------------------------------
@@ -98,6 +103,35 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
     return this;
   }
 
+  @Override
+  public SystemBuilderDSLPositionRelativeTo startingFrom(final String otherObject) {
+    relative = otherObject;
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPositionRelativeTo withDistance(final long distance) {
+    distanceFromRelative = BigDecimal.valueOf(distance);
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPositionRelativeTo withThetaInDegrees(final double theta) {
+    thetaRelative = theta;
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPositionRelativeTo withRelativeEclipticInclination(final double alpha) {
+    eclipticInclinationRelative = alpha;
+    return this;
+  }
+
+  @Override
+  public SystemBuilderDSLPositionRelativeTo withRelativeStartSpeed(final long velocity) {
+    velocityRelative = BigDecimal.valueOf(velocity);
+    return this;
+  }
 
   // ------------------------------------------------- GETTERS -----------------------------------------------
   public String getName() {
@@ -134,5 +168,25 @@ public class DSLObjectConfiguration implements SystemBuilderDSLNamed, SystemBuil
 
   public BigDecimal getStartSpeed() {
     return startSpeed;
+  }
+
+  public String getRelative() {
+    return relative;
+  }
+
+  public BigDecimal getVelocityRelative() {
+    return velocityRelative;
+  }
+
+  public Double getEclipticInclinationRelative() {
+    return eclipticInclinationRelative;
+  }
+
+  public Double getThetaRelative() {
+    return thetaRelative;
+  }
+
+  public BigDecimal getDistanceFromRelative() {
+    return distanceFromRelative;
   }
 }

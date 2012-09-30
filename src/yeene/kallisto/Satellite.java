@@ -27,7 +27,6 @@ public class Satellite {
   private Vector velocity;
   private Vector position;
 
-
   public Satellite(final String name, final BigDecimal radius, final BigDecimal mass, final Vector position, final Vector velocity) {
     this.name = name;
     this.radius = radius;

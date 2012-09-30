@@ -48,7 +48,7 @@ public class SystemBuilder {
     final SimulatedSystem result = new SimulatedSystem();
 
     for(final DSLObjectConfiguration configuration : configurations) {
-      result.addPlanets(createObjectFromConfiguration(configuration));
+      result.addPlanets(createObjectFromConfiguration(configuration, result));
     }
 
     return result;
@@ -64,15 +64,32 @@ public class SystemBuilder {
   }
 
 
-  private Satellite createObjectFromConfiguration(final DSLObjectConfiguration configuration) {
+  private Satellite createObjectFromConfiguration(final DSLObjectConfiguration configuration, final SimulatedSystem resultingSystem) {
 
     final Vector position;
     final Vector velocity;
-    if(configuration.getInitialPosition() != null) {
+
+    // CASE1: a position was defined relatively to another object.
+    if(configuration.getRelative() != null) {
+      final Satellite relative = resultingSystem.find(configuration.getRelative());
+
+      final Vector relativePositionToInitialSystem = new Vector(configuration.getDistanceFromRelative(), ZERO, ZERO);
+      final Vector relativeVelocityToInitialSystem = new Vector(ZERO, configuration.getVelocityRelative(), ZERO);
+
+      final Matrix m = rotationalMatrix(0.0 /*configuration.getThetaRelative() */, 0.0, configuration.getThetaRelative());
+
+      position = m.multiply(relativePositionToInitialSystem).add(relative.getPosition());
+      velocity = m.multiply(relativeVelocityToInitialSystem).add(relative.getVelocity());
+    }
+    // CASE2: a position was defined directly, usw it
+    else if(configuration.getInitialPosition() != null) {
       // use the configured data.
       position = configuration.getInitialPosition();
       velocity = configuration.getInitialVelocity();
-    } else {
+    }
+
+    // CASE3: a position was defined through a circle, so calculate vectors
+    else {
       // make by rotating stuff
       final Vector positionRelative = new Vector(configuration.getBigHalfAxis(), ZERO, ZERO);
       final Vector velocityRelative = new Vector(ZERO, configuration.getStartSpeed(), ZERO);

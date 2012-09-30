@@ -74,6 +74,7 @@ public class Main extends Frame {
       createObject().named("mercury").withRadius(2439000l).withMass(3.302E23).withEclipticInclination(7.0).withBigHalfAxis(57909000000l).withThetaInDegrees(90).withStartSpeed(47870l);
       createObject().named("venus").withRadius(6051000l).withMass(4.869E24).withEclipticInclination(3.395).withBigHalfAxis(108160000000l).withThetaInDegrees(200).withStartSpeed(35020l);
       createObject().named("earth").withRadius(6378000l).withMass(5.974E24).withEclipticInclination(0.0).withBigHalfAxis(149600000000l).withThetaInDegrees(0).withStartSpeed(29780l);
+      createObject().named("moon").withRadius(3475l).withMass(7.349E22).startingFrom("earth").withDistance(384400000l).withThetaInDegrees(0).withRelativeEclipticInclination(0.0).withRelativeStartSpeed(1032l);
       createObject().named("mars").withRadius(3396200l).withMass(6.419E23).withEclipticInclination(1.850).withBigHalfAxis(227990000000l).withThetaInDegrees(0).withStartSpeed(24130l);
 
       // create the outer planets
