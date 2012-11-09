@@ -7,9 +7,9 @@
   ]]></description>
 
   <!-- set global properties for this build -->
-  <property name="guisrc" location="gui" />
-  <property name="src" location="src"/>
-  <property name="test-src" location="test"/>
+  <property name="guisrc" location="gui-awt" />
+  <property name="src" location="kallisto/src"/>
+  <property name="test-src" location="kallisto/test"/>
   <property name="build" location="build"/>
   <property name="dist"  location="dist"/>
 
