@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gui-awt/gui-awt.iml" filepath="$PROJECT_DIR$/gui-awt/gui-awt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gui/gui-awt.iml" filepath="$PROJECT_DIR$/gui/gui-awt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gui-opengl/gui-opengl.iml" filepath="$PROJECT_DIR$/gui-opengl/gui-opengl.iml" />
       <module fileurl="file://$PROJECT_DIR$/kallisto/kallisto-base.iml" filepath="$PROJECT_DIR$/kallisto/kallisto-base.iml" />
     </modules>
   </component>
