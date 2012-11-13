@@ -16,6 +16,7 @@ public class Configuration {
   public static final String CONF_OUTPUT_METHOD = "output.graphic.driver";
 
   private final Map<String, String> configuration = new HashMap<String, String>();
+  private boolean displayHelp = false;
   private final List<String> errors = new ArrayList<String>();
 
   private Configuration() {
@@ -30,6 +31,9 @@ public class Configuration {
     return errors.size() > 0;
   }
 
+  public boolean isDisplayHelp() {
+    return displayHelp;
+  }
 
   public static Configuration loadConfiguration(final String[] configuration) {
     final Configuration result = new Configuration();
@@ -39,17 +43,35 @@ public class Configuration {
 
       // check for known values.
       if(COMMANDLINE_ARG_GUI.equalsIgnoreCase(key)) {
-        result.configuration.put(CONF_OUTPUT_METHOD, configuration[i+1]);
+        result.configuration.put(CONF_OUTPUT_METHOD, configuration[i + 1]);
         i++;
+      } else if(COMMANDLINE_ARG_HELP.equalsIgnoreCase(key)) {
+        result.displayHelp = true;
       } else {
         result.errors.add(key);
       }
     }
 
+    // call help.
+    if(result.isDisplayHelp()) {
+      showHelpText();
+    }
+
     return result;
   }
 
+  private static void showHelpText() {
+    System.out.println("Kallisto - GUI - Commandline Options:\n");
+    System.out.println("  --help                     ... this help text.\n");
+    System.out.println("  --gui <option>             ... set display technology to be used for graphics output.\n");
+    System.out.println("        Available options are: \n");
+    System.out.println("        opengl               ... with graphics output.\n");
+    System.out.println("        term                 ... basic console support only\n");
+    System.out.println();
+    System.out.println();
+  }
 
 
   protected static final String COMMANDLINE_ARG_GUI = "--gui";
+  protected static final String COMMANDLINE_ARG_HELP = "--help";
 }

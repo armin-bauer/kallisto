@@ -4,7 +4,7 @@ import mockit.Deencapsulation;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import yeene.kallisto.gui.driver.nullout.NulloutGraphics;
+import yeene.kallisto.gui.driver.terminal.TerminalOutput;
 import yeene.kallisto.gui.driver.opengl.OpenGLGraphics;
 
 import static org.fest.assertions.Assertions.assertThat;
@@ -49,7 +49,7 @@ public class GraphicsFactoryTest {
   public Object[][] typeProvider() {
     return new Object[][] {
       new Object[] { DriverType.OPENGL, OpenGLGraphics.class },
-      new Object[] { DriverType.NULL, NulloutGraphics.class }
+      new Object[] { DriverType.TERMINAL, TerminalOutput.class }
     };
   }
 

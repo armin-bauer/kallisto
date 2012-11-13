@@ -57,7 +57,7 @@ public class KallistoGUI {
     if("opengl".equalsIgnoreCase(driverType)) {
       GraphicsFactory.setDriverType(GraphicsFactory.DriverType.OPENGL);
     } else {
-      GraphicsFactory.setDriverType(GraphicsFactory.DriverType.NULL);
+      GraphicsFactory.setDriverType(GraphicsFactory.DriverType.TERMINAL);
     }
 
     // start up the graphics driver.

@@ -1,11 +1,11 @@
-package yeene.kallisto.gui.driver.nullout;
+package yeene.kallisto.gui.driver.terminal;
 
 import yeene.kallisto.gui.driver.GraphicFrame;
 
 /**
  * this defines a graphic interface that has no output
  */
-public class NulloutGraphics implements GraphicFrame {
+public class TerminalOutput implements GraphicFrame {
 
 
   @Override
