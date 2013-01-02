@@ -1,7 +1,8 @@
 package yeene.kallisto.systembuilder;
 
-import yeene.kallisto.Satellite;
 import yeene.kallisto.SimulatedSystem;
+import yeene.kallisto.Satellite;
+import yeene.kallisto.CalculatingSimulatedSystem;
 import yeene.kallisto.math.Matrix;
 import yeene.kallisto.math.Vector;
 import yeene.kallisto.systembuilder.dsl.SystemBuilderDSLNamed;
@@ -42,10 +43,10 @@ public class SystemBuilder {
 
   /**
    * build the system from the given configuration and return it.
-   * @return initialised SimulatedSystem Object.
+   * @return initialised CalculatingSimulatedSystem Object.
    */
   public SimulatedSystem getSystem() {
-    final SimulatedSystem result = new SimulatedSystem();
+    final SimulatedSystem result = new CalculatingSimulatedSystem();
 
     for(final DSLObjectConfiguration configuration : configurations) {
       result.addPlanets(createObjectFromConfiguration(configuration, result));

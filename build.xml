@@ -7,7 +7,8 @@
   ]]></description>
 
   <!-- set global properties for this build -->
-  <property name="guisrc" location="gui-awt" />
+  <property name="simplegui-src" location="gui-awt" />
+	<property name="app-src" location="gui-opengl" />
   <property name="src" location="kallisto/src"/>
   <property name="test-src" location="kallisto/test"/>
   <property name="build" location="build"/>
@@ -17,7 +18,7 @@
   <taskdef resource="testngtasks" classpath="lib/testing/testng-6.5.1.jar"/>
 
   <!-- define targets -->
-  <target name="dist" depends="init,compile,javadoc,pack,test" />
+  <target name="dist" depends="init,compile-simplegui,compile-app,javadoc,pack,test" />
 
   <target name="clean">
     <delete dir="${build}" />
@@ -26,26 +27,49 @@
 
   <target name="init">
     <mkdir dir="${build}" />
-    <mkdir dir="${build}/app" />
+    <mkdir dir="${build}/${simplegui-src}" />
+    <mkdir dir="${build}/${app-src}" />
     <mkdir dir="${dist}" />
   </target>
 
-  <target name="compile">
+	<target name="compile-app">
     <!-- copy property and resource files -->
-    <copy todir="${build}/app">
+    <copy todir="${build}/${app-src}">
       <fileset dir="${src}" includes="**/*.properties" />
-      <fileset dir="${guisrc}" includes="**/*.properties" />
+      <fileset dir="${app-src}" includes="**/*.properties" />
     </copy>
 
     <!-- compile data -->
-    <javac destdir="${build}/app" debug="on" compiler="modern" includeAntRuntime="no" target="1.6" source="1.6">
+    <javac destdir="${build}/${app-src}" debug="on" compiler="modern" includeAntRuntime="no" target="1.6" source="1.6">
       <src path="${src}" />
-      <src path="${guisrc}" />
+      <src path="${simplegui-src}" />
+			<classpath>
+				<fileset dir="lib/lwjgl/lwjgl-2.8.5/jar/">
+					<include name="lwjgl.jar" />
+					<include name="lzma.jar" />
+					<include name="jinput.jar" />
+					<include name="lwjgl_util.jar" />
+				</fileset>
+			</classpath>
+    </javac>
+  </target>
+
+  <target name="compile-simplegui">
+    <!-- copy property and resource files -->
+    <copy todir="${build}/${simplegui-src}">
+      <fileset dir="${src}" includes="**/*.properties" />
+      <fileset dir="${simplegui-src}" includes="**/*.properties" />
+    </copy>
+
+    <!-- compile data -->
+    <javac destdir="${build}/${simplegui-src}" debug="on" compiler="modern" includeAntRuntime="no" target="1.6" source="1.6">
+      <src path="${src}" />
+      <src path="${simplegui-src}" />
     </javac>
   </target>
 
   <target name="pack">
-    <jar destfile="${dist}/kallisto.jar" basedir="${build}/app">
+    <jar destfile="${dist}/kallisto.jar" basedir="${build}/${simplegui-src}">
       <manifest>
         <attribute name="Main-Class" value="yeene.kallisto.gui.Main" />
       </manifest>
@@ -60,7 +84,7 @@
     <javadoc destdir="${dist}/javadoc" locale="en_US" source="1.6">
       <sourcepath>
         <pathelement path="${src}" />
-        <pathelement path="${guisrc}/src" />
+        <pathelement path="${simplegui-src}/src" />
       </sourcepath>
     </javadoc>
 

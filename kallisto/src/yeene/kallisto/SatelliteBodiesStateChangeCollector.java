@@ -5,7 +5,7 @@ import yeene.kallisto.math.Vector;
 import java.math.BigDecimal;
 
 /**
- * This is a helper class that is used by {@link SimulatedSystem} to collect the
+ * This is a helper class that is used by {@link CalculatingSimulatedSystem} to collect the
  * acceleration that is inflicted on an object in the system by the other objects.
  *
  * @author yeene

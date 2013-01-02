@@ -15,7 +15,7 @@
       <class name="yeene.kallisto.math.MathUtils" />
       <class name="yeene.kallisto.math.VectorTest" />
       <class name="yeene.kallisto.SatelliteBodiesStateChangeCollectorTest" />
-      <class name="yeene.kallisto.SimulatedSystemTest" />
+      <class name="yeene.kallisto.CalculatingSimulatedSystemTest" />
       <class name="yeene.kallisto.math.MatrixTest" />
       <class name="yeene.kallisto.SimulatedSystemRetainsRotationalImpulseTest" />
     </classes>

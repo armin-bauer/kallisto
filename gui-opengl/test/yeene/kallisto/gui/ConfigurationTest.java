@@ -42,6 +42,17 @@ public class ConfigurationTest {
   }
 
   @Test
+  public void loadConfiguration_setsThreadPoolSizeAsDefaultSetting() throws Exception {
+    // fixture: not needed
+
+    // execution: load configuration
+    final Configuration configuration = Configuration.loadConfiguration(new String[] {});
+
+    // assertion: should contain thread pool size of 1.
+    assertThat(configuration.getValueFor(CONF_THREADPOOL_SIZE)).describedAs("threadpool size").isEqualTo("2");
+  }
+
+  @Test
   public void loadConfiguration_displaysHelpText_whenHelpParameterIsSupplied() throws Exception {
     // fixture: not needed
     final AtomicBoolean showHelpTextWasCalled = new AtomicBoolean(false);

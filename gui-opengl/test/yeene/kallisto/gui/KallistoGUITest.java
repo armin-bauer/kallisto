@@ -8,8 +8,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import yeene.kallisto.gui.driver.GraphicFrame;
 import yeene.kallisto.gui.driver.GraphicsFactory;
+import yeene.kallisto.gui.simulation.ThreadPool;
 
 import static org.fest.assertions.Assertions.assertThat;
+import static yeene.kallisto.gui.Configuration.CONF_THREADPOOL_SIZE;
 
 /**
  * @author yeene
@@ -31,6 +33,7 @@ public class KallistoGUITest {
     new NonStrictExpectations() {
       @Mocked Configuration configuration;
       @Mocked GraphicFrame frame;
+      @Mocked ThreadPool threadPool;
       @Mocked(methods = "getInstance") GraphicsFactory graphicsFactory = null;
       {
         Configuration.loadConfiguration((String[]) any);
@@ -41,6 +44,13 @@ public class KallistoGUITest {
             return configuration;
           }
         };
+
+        new ThreadPool(2);
+        times = 1;
+
+        configuration.getIntValueFor(CONF_THREADPOOL_SIZE, 2);
+        minTimes = 1;
+        result = 2;
 
         configuration.getValueFor(Configuration.CONF_OUTPUT_METHOD);
         minTimes = 1;

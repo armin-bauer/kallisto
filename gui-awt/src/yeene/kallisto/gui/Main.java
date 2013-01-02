@@ -1,6 +1,7 @@
 package yeene.kallisto.gui;
 
 import yeene.kallisto.SimulatedSystem;
+import yeene.kallisto.CalculatingSimulatedSystem;
 import yeene.kallisto.systembuilder.SystemBuilder;
 
 import java.awt.*;
@@ -20,7 +21,7 @@ public class Main extends Frame {
     setName("Kallisto Rendering Window (AWT)");
 
 
-    simulatedSystem = new SimulatedSystem();
+    simulatedSystem = new CalculatingSimulatedSystem();
   }
 
   public Frame getFrame() {

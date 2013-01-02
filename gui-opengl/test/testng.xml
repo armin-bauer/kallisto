@@ -7,6 +7,8 @@
   <test name="Output Modules Drivers">
     <classes>
       <class name="yeene.kallisto.gui.driver.GraphicsFactoryTest" />
+      <class name="yeene.kallisto.gui.driver.AbstractSystemRendererTest" />
+      <class name="yeene.kallisto.gui.view.method.LinearCameraTest" />
     </classes>
   </test>
 
@@ -14,6 +16,13 @@
     <classes>
       <class name="yeene.kallisto.gui.KallistoGUITest" />
       <class name="yeene.kallisto.gui.simulation.SystemThreadTest" />
+      <class name="yeene.kallisto.gui.simulation.ThreadPoolTest" />
+    </classes>
+  </test>
+
+  <test name="OpenGL-Interface">
+    <classes>
+      <class name="yeene.kallisto.gui.driver.opengl.OpenGLGraphicsTest"/>
     </classes>
   </test>
 

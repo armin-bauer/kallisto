@@ -1,8 +1,10 @@
 package yeene.kallisto.gui;
 
 import yeene.kallisto.gui.driver.GraphicsFactory;
+import yeene.kallisto.gui.simulation.ThreadPool;
 
 import static yeene.kallisto.gui.Configuration.CONF_OUTPUT_METHOD;
+import static yeene.kallisto.gui.Configuration.CONF_THREADPOOL_SIZE;
 
 /**
  * base class of the kallisto gui holding the manager components for different tasks
@@ -15,6 +17,7 @@ public class KallistoGUI {
   private static KallistoGUI instance;
 
   private Configuration configuration;
+  private ThreadPool threadPool;
 
 
   private KallistoGUI() {
@@ -42,6 +45,7 @@ public class KallistoGUI {
     // init the GUI.
 
     // setup the simulated system.
+    threadPool = new ThreadPool(configuration.getIntValueFor(CONF_THREADPOOL_SIZE, 2));
   }
 
   /**

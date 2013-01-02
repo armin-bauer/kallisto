@@ -2,8 +2,8 @@ package yeene.kallisto.systembuilder;
 
 import org.testng.annotations.Test;
 import yeene.kallisto.Constants;
-import yeene.kallisto.Satellite;
 import yeene.kallisto.SimulatedSystem;
+import yeene.kallisto.Satellite;
 import yeene.kallisto.math.Vector;
 
 import java.math.BigDecimal;

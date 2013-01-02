@@ -2,16 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0f76a33-230a-4561-8841-1bbb343eac29" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/nullout/NulloutGraphics.java" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/terminal/TerminalOutput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/AbstractCamera.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/AbstractSystemRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/AbstractSystemRendererTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kallisto/test/yeene/kallisto/CalculatingSimulatedSystemTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/LinearCamera.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/view/method/LinearCameraTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/material/Material.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/material/MaterialLibrary.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/MovingCamera.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/opengl/OpenGLGraphicsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/SystemRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/simulation/ThreadPool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/simulation/ThreadPoolTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/SimulatedSystem.java" afterPath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/CalculatingSimulatedSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Configuration.java" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Configuration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/KallistoGUI.java" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/KallistoGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/GraphicsFactory.java" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/GraphicsFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/ConfigurationTest.java" afterPath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/ConfigurationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/GraphicsFactoryTest.java" afterPath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/GraphicsFactoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/KallistoGUI.java" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/KallistoGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/KallistoGUITest.java" afterPath="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/KallistoGUITest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-awt/src/yeene/kallisto/gui/Main.java" afterPath="$PROJECT_DIR$/gui-awt/src/yeene/kallisto/gui/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLGraphics.java" afterPath="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLGraphics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-awt/src/yeene/kallisto/gui/RenderTask.java" afterPath="$PROJECT_DIR$/gui-awt/src/yeene/kallisto/gui/RenderTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/SatelliteBodiesStateChangeCollector.java" afterPath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/SatelliteBodiesStateChangeCollector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/SimulatedSystem.java" afterPath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/SimulatedSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/systembuilder/SystemBuilder.java" afterPath="$PROJECT_DIR$/kallisto/src/yeene/kallisto/systembuilder/SystemBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kallisto/test/yeene/kallisto/systembuilder/SystemBuilderTest.java" afterPath="$PROJECT_DIR$/kallisto/test/yeene/kallisto/systembuilder/SystemBuilderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-awt/gui-awt.iml" afterPath="$PROJECT_DIR$/gui-awt/gui-awt.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/gui-opengl.iml" afterPath="$PROJECT_DIR$/gui-opengl/gui-opengl.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kallisto/kallisto-base.iml" afterPath="$PROJECT_DIR$/kallisto/kallisto-base.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui-opengl/test/testng.xml" afterPath="$PROJECT_DIR$/gui-opengl/test/testng.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kallisto/test/testng.xml" afterPath="$PROJECT_DIR$/kallisto/test/testng.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kallisto.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="c0f76a33-230a-4561-8841-1bbb343eac29" time="1357153393547" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +60,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any>
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -39,6 +68,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -54,6 +84,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -63,50 +94,16 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
-    <ui_properties>
-      <property name="line_breakpoints_groupByMethods" value="false" />
-      <property name="line_breakpoints_viewId" value="TABLE" />
-      <property name="exception_breakpoints_flattenPackages" value="true" />
-      <property name="method_breakpoints_flattenPackages" value="true" />
-      <property name="field_breakpoints_flattenPackages" value="true" />
-      <property name="exception_breakpoints_groupByMethods" value="false" />
-      <property name="line_breakpoints_groupByClasses" value="true" />
-      <property name="method_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_groupByMethods" value="false" />
-      <property name="line_breakpoints_flattenPackages" value="true" />
-      <property name="field_breakpoints_groupByClasses" value="true" />
-      <property name="method_breakpoints_groupByClasses" value="true" />
-      <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_viewId" value="TABLE" />
-      <property name="exception_breakpoints_groupByClasses" value="true" />
-      <property name="method_breakpoints_groupByMethods" value="false" />
-    </ui_properties>
+    <ui_properties />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="kallisto" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ConfigurationTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/ConfigurationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="27" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Configuration.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Configuration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="0" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.99546486">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -125,34 +122,40 @@
   <component name="GitLogSettings">
     <option name="mySelectedBranch" value="refs/heads/master" />
     <option name="myStructureFilterPaths" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/nullout/NulloutGraphics.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/GraphicsFactoryTest.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Main.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Constants.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/KallistoGUITest.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/system/System.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/KallistoGUI.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/system/SystemThreadTest.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/system/SystemThread.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/opengl/OpenGLGraphicsTest.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLGraphics.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/AbstractCamera.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/view/method/MovingCameraTest.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/MovingCamera.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/LinearCamera.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/view/method/LinearCameraTest.java" />
+        <option value="$PROJECT_DIR$/kallisto/src/yeene/kallisto/SimulatedSystem.java" />
+        <option value="$PROJECT_DIR$/kallisto/src/yeene/kallisto/CalculatingSimulatedSystem.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/SystemRenderer.java" />
         <option value="$PROJECT_DIR$/gui-opengl/test/testng.xml" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/simulation/SystemThreadState.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/simulation/SystemThreadTest.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/simulation/SystemThread.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/GraphicsFactory.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/ConfigurationTest.java" />
-        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Configuration.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/AbstractSystemRenderer.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLRenderer.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/AbstractSystemRendererTest.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/material/Material.java" />
+        <option value="$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/material/MaterialLibrary.java" />
       </list>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.7" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="21" />
-    <option name="width" value="1600" />
-    <option name="height" value="879" />
+    <option name="y" value="25" />
+    <option name="width" value="1920" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -323,7 +326,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kallisto" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -366,28 +373,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kallisto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui-opengl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simulation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -427,7 +412,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="simulation" />
+              <option name="myItemId" value="method" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,6 +435,90 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="driver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kallisto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui-opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="driver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kallisto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui-opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="driver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="material" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kallisto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui-awt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kallisto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui-awt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,8 +547,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="project.structure.proportion" value="0.15" />
@@ -487,7 +556,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.sourceCode.General" />
+    <property name="options.lastSelected" value="fileTemplates" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -495,15 +564,20 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="yeene.kallisto.gui.system" />
-      <recent name="yeene.kallisto.gui" />
       <recent name="yeene.kallisto.gui.driver" />
+      <recent name="yeene.kallisto.gui.view.method" />
+      <recent name="yeene.kallisto.gui.driver.opengl" />
+      <recent name="yeene.kallisto.gui.simulation" />
+      <recent name="yeene.kallisto.gui.system" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="yeene.kallisto" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="yeene.kallisto.SimulatedSystemRetainsEnergyTest" />
@@ -511,117 +585,15 @@
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="yeene.kallisto.gui.Constants" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="yeene.kallisto.gui.driver" />
+      <recent name="yeene.kallisto.gui.simulation" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="yeene.kallisto.gui.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG./home/armin/Coding/yeene/kallisto/gui-opengl/test/testng.xml">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="yeene.kallisto.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="yeene.kallisto.gui.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="gui-opengl" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ConfigurationTest" type="TestNG" factoryName="TestNG" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="yeene.kallisto.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="gui-opengl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="yeene.kallisto.gui" />
-      <option name="MAIN_CLASS_NAME" value="yeene.kallisto.gui.ConfigurationTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="47933" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
-    <configuration default="false" name="KallistoGUITest" type="TestNG" factoryName="TestNG" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="yeene.kallisto.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="gui-opengl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="yeene.kallisto.gui" />
-      <option name="MAIN_CLASS_NAME" value="yeene.kallisto.gui.KallistoGUITest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="35724" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="SystemThreadTest.loop_sleepsFor100Ms_whenThreadWaitsForWork" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -665,13 +637,56 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="gui-opengl" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/gui-opengl/test/testng.xml" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <envs />
+      <properties />
+      <listeners>
+        <listener class="mockit.integration.testng.Initializer" />
+      </listeners>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="35470" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LinearCameraTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="yeene.kallisto.gui.view.method.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="gui-opengl" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="yeene.kallisto.gui.view.method" />
+      <option name="MAIN_CLASS_NAME" value="yeene.kallisto.gui.view.method.LinearCameraTest" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -687,20 +702,84 @@
       <envs />
       <properties />
       <listeners />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56932" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="AbstractSystemRendererTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="yeene.kallisto.gui.driver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="gui-opengl" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="yeene.kallisto.gui.driver" />
+      <option name="MAIN_CLASS_NAME" value="yeene.kallisto.gui.driver.AbstractSystemRendererTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="46678" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="yeene.kallisto.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="yeene.kallisto.gui.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gui-awt" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -708,29 +787,7 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -758,12 +815,20 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -778,12 +843,7 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -804,20 +864,20 @@
       </option>
       <envs />
       <patterns />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.ConfigurationTest" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.KallistoGUITest" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.SystemThreadTest.loop_sleepsFor100Ms_whenThreadWaitsForWork" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG./home/armin/Coding/yeene/kallisto/gui-opengl/test/testng.xml" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.SystemThreadTest.loop_sleepsFor100Ms_whenThreadWaitsForWork" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG./home/armin/Coding/yeene/kallisto/gui-opengl/test/testng.xml" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.LinearCameraTest" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.AbstractSystemRendererTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -920,7 +980,11 @@
       <created>1352762970198</created>
       <updated>1352762970198</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- renamed null output to terminal output&#10;- added help text">
+      <created>1352793281002</created>
+      <updated>1352793281002</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -944,32 +1008,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="21" width="1600" height="879" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36462584" sideWeight="0.32818532" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36462584" sideWeight="0.32818532" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935567" sideWeight="0.67134833" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32108843" sideWeight="0.6056701" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43516484" sideWeight="0.6056701" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.6673102" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27027026" sideWeight="0.34039548" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789117" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27061856" sideWeight="0.32627118" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996139" sideWeight="0.67346936" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23294723" sideWeight="0.6353741" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17662753" sideWeight="0.5648352" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.497426" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.6707483" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789117" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.6707483" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -995,7 +1061,6 @@
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
@@ -1005,12 +1070,14 @@
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lifecycle of the simulation thread." />
+    <option name="LAST_COMMIT_MESSAGE" value="- renamed null output to terminal output&#10;- added help text" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1040,6 +1107,7 @@
     <MESSAGE value="- fixed some typos." />
     <MESSAGE value="added new options to the DSL for defining moons relative to other planets." />
     <MESSAGE value="lifecycle of the simulation thread." />
+    <MESSAGE value="- renamed null output to terminal output&#10;- added help text" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1083,91 +1151,101 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLGraphics.java">
+    <entry file="file://$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/view/method/LinearCameraTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="33" selection-start="418" selection-end="418" vertical-scroll-proportion="0.51391864" />
+        <state line="34" column="6" selection-start="868" selection-end="868" vertical-scroll-proportion="1.311054" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/testing/fest-assert-1.4-sources.jar!/org/fest/assertions/ObjectGroupAssert.java">
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/LinearCamera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="17" selection-start="2572" selection-end="2572" vertical-scroll-proportion="0.3319239" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="16" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/GraphicFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="499" selection-end="499" vertical-scroll-proportion="0.602537" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/KallistoGUITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="49" selection-start="1644" selection-end="1644" vertical-scroll-proportion="1.4122622" />
+        <state line="21" column="29" selection-start="572" selection-end="572" vertical-scroll-proportion="0.73264784" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="232" selection-end="232" vertical-scroll-proportion="0.3488372" />
-      </provider>
-    </entry>
-    <entry file="jar:///opt/jdk1.7.0_04/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="298" column="48" selection-start="9596" selection-end="9619" vertical-scroll-proportion="0.3319239" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/test/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="69" selection-start="517" selection-end="517" vertical-scroll-proportion="0.47568712" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/simulation/SystemThreadTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="11" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/simulation/SystemThreadState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="20" selection-start="206" selection-end="224" vertical-scroll-proportion="0.34013605" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/simulation/SystemThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.35600907" />
+        <state line="14" column="9" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/KallistoGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="32" selection-start="667" selection-end="667" vertical-scroll-proportion="0.034013607" />
+        <state line="54" column="38" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/GraphicsFactory.java">
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/GraphicFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="12" selection-start="466" selection-end="466" vertical-scroll-proportion="0.20408164">
+        <state line="21" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.44428772" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/SystemRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="71" selection-start="672" selection-end="672" vertical-scroll-proportion="0.528914" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/test/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="71" selection-start="355" selection-end="355" vertical-scroll-proportion="0.19040902" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/AbstractSystemRendererTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="41" selection-start="546" selection-end="546" vertical-scroll-proportion="0.84832907" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/view/method/MovingCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="54" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/driver/GraphicsFactoryTest.java">
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/AbstractSystemRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="83" selection-start="1117" selection-end="1117" vertical-scroll-proportion="-0.054421768">
+        <state line="40" column="41" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/test/yeene/kallisto/gui/ConfigurationTest.java">
+    <entry file="file://$PROJECT_DIR$/kallisto/src/yeene/kallisto/SimulatedSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="27" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.0">
+        <state line="7" column="17" selection-start="91" selection-end="91" vertical-scroll-proportion="0.118644066">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/Configuration.java">
+    <entry file="file://$PROJECT_DIR$/kallisto/src/yeene/kallisto/CalculatingSimulatedSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.99546486">
+        <state line="15" column="51" selection-start="399" selection-end="399" vertical-scroll-proportion="0.20338982">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLGraphics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="14" selection-start="2378" selection-end="2378" vertical-scroll-proportion="0.016949153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/OpenGLRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="48" selection-start="347" selection-end="347" vertical-scroll-proportion="0.23728813">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/material/Material.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="2" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui-opengl/src/yeene/kallisto/gui/driver/opengl/material/MaterialLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="0.40677965">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,7 +1290,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.6</last-edited>
+          <last-edited>1.7u9</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1224,7 +1302,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>gui-opengl</last-edited>
+          <last-edited>gui-awt</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

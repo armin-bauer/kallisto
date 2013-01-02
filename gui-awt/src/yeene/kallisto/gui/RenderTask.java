@@ -1,9 +1,6 @@
 package yeene.kallisto.gui;
 
-import yeene.kallisto.BoundingBox;
-import yeene.kallisto.Constants;
-import yeene.kallisto.Satellite;
-import yeene.kallisto.SimulatedSystem;
+import yeene.kallisto.*;
 
 import java.awt.*;
 import java.math.BigDecimal;

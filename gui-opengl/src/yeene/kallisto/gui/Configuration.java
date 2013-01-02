@@ -14,6 +14,7 @@ import java.util.Map;
 public class Configuration {
 
   public static final String CONF_OUTPUT_METHOD = "output.graphic.driver";
+  public static final String CONF_THREADPOOL_SIZE = "threadpool.size";
 
   private final Map<String, String> configuration = new HashMap<String, String>();
   private boolean displayHelp = false;
@@ -27,6 +28,14 @@ public class Configuration {
     return configuration.get(option);
   }
 
+  public int getIntValueFor(final String option, int defaultValue) {
+    try {
+      return Integer.valueOf(configuration.get(option));
+    } catch(Exception ignored) {
+      return defaultValue;
+    }
+  }
+
   public boolean hasErrors() {
     return errors.size() > 0;
   }
@@ -37,6 +46,8 @@ public class Configuration {
 
   public static Configuration loadConfiguration(final String[] configuration) {
     final Configuration result = new Configuration();
+
+    setDefaults(result);
 
     for(int i=0;i<configuration.length;i++) {
       final String key = configuration[i];
@@ -58,6 +69,14 @@ public class Configuration {
     }
 
     return result;
+  }
+
+  /**
+   * sets default settings to the Configuration supplied to the function
+   * @param result configuration to change
+   */
+  private static void setDefaults(final Configuration result) {
+    result.configuration.put(CONF_THREADPOOL_SIZE, "2");
   }
 
   private static void showHelpText() {
