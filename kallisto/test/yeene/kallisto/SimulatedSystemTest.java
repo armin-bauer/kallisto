@@ -23,7 +23,7 @@ public class SimulatedSystemTest {
 
   @BeforeMethod
   public void setUp() throws Exception {
-    simulatedSystem = new SimulatedSystem();
+    simulatedSystem = new CalculatingSimulatedSystem();
   }
 
   @Test
